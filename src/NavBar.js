@@ -9,7 +9,7 @@ function Menu() {
 
         <div id="menu-bar" class="fas fa-bars"></div>
 
-        <a href="#" class="logo">La libreria</a>
+        <h1 class="logo">La libreria</h1>
 
         <nav class="navbar">
             <a href="./app.js">Inicio</a>
@@ -19,10 +19,10 @@ function Menu() {
                 <div id="submenu" class="dropdown">
                     <FontAwesomeIcon icon={faCaretDown} />
                     <ul class="pags">
-                        <li><a href="#">Policiaco</a></li>
-                        <li><a href="#">Romance</a></li>
-                        <li><a href="#">Ciencia Ficción</a></li>
-                        <li><a href="#">Aventuras</a></li>
+                        <li><h3>Policiaco</h3></li>
+                        <li><h3>Romance</h3></li>
+                        <li><h3>Ciencia Ficción</h3></li>
+                        <li><h3>Aventuras</h3></li>
                     </ul>
                 </div>
         </nav>
