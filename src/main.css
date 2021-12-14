@@ -25,4 +25,9 @@
     width: 25%;
 }
 
+.products .box-container .box .botones {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 

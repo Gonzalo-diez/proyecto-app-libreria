@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEye, faShare, faStar} from '@fortawesome/free-solid-svg-icons'
 import "./main.css"
+import ItemCount from "./ItemCount";
 
 function Main() {
     return (
@@ -27,6 +28,7 @@ function Main() {
                     </div>
                     <button className="btn">Agregar al carrito</button>
                 </div>
+                <ItemCount />
             </div>
             
             <div className="box">
@@ -46,6 +48,7 @@ function Main() {
                         <FontAwesomeIcon icon={faStar} />
                     </div>
                     <button className="btn">Agregar al carrito</button>
+                    <ItemCount />
                 </div>
             </div>
 
@@ -66,6 +69,7 @@ function Main() {
                         <FontAwesomeIcon icon={faStar} />
                     </div>
                     <button className="btn">Agregar al carrito</button>
+                    <ItemCount />
                 </div>
             </div>
 
@@ -86,7 +90,8 @@ function Main() {
                         <FontAwesomeIcon icon={faStar} />
                     </div>
                     <button className="btn">Agregar al carrito</button>
-            </div>
+                    <ItemCount />
+                </div>
             </div>
 
         </div>
