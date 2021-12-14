@@ -7,18 +7,16 @@ function Menu() {
     return (
         <header>
 
-        <div id="menu-bar" class="fas fa-bars"></div>
+        <h1 className="logo">La libreria</h1>
 
-        <h1 class="logo">La libreria</h1>
-
-        <nav class="navbar">
-            <a href="./app.js">Inicio</a>
-            <a href="#destacados">Destacados</a>
-            <a href="#reviews">Ayuda</a>
-            <a href="#libros">Generos</a>
-                <div id="submenu" class="dropdown">
+        <nav className="navbar">
+            <h2>Inicio</h2>
+            <h2>Destacados</h2>
+            <h2>Ayuda</h2>
+            <h2>Generos</h2>
+                <div id="submenu" className="dropdown">
                     <FontAwesomeIcon icon={faCaretDown} />
-                    <ul class="pags">
+                    <ul className="pags">
                         <li><h3>Policiaco</h3></li>
                         <li><h3>Romance</h3></li>
                         <li><h3>Ciencia Ficción</h3></li>
@@ -27,7 +25,7 @@ function Menu() {
                 </div>
         </nav>
 
-        <div class="icons">
+        <div className="icons">
             <FontAwesomeIcon icon={faHeart} />
             <FontAwesomeIcon icon={faShoppingCart} />
             <FontAwesomeIcon icon={faUser} />
