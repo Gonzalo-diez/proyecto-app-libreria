@@ -39,7 +39,7 @@ function Main() {
                 </div>
                 <img src="./saga-percy-jackson.png" />
                 <div className="content">
-                    <h3>Libro</h3>
+                    <h3>Saga de percy Jackson</h3>
                     <div className="precio">$13000.00 <span>$15500.00</span></div>
                     <div className="stars">
                         <FontAwesomeIcon icon={faStar} />
@@ -60,7 +60,7 @@ function Main() {
                 </div>
                 <img src="./saga-narnia.png" />
                 <div className="content">
-                    <h3>Libro</h3>
+                    <h3>Saga de Narnia</h3>
                     <div className="precio">$16000.00 <span>$20500.00</span></div>
                     <div className="stars">
                         <FontAwesomeIcon icon={faStar} />
@@ -81,7 +81,7 @@ function Main() {
                 </div>
                 <img src="./saga-maze-runner.png" />
                 <div class="content">
-                    <h3>Libro</h3>
+                    <h3>Saga de Maze Runner</h3>
                     <div className="precio">$15800.00 <span>$21000.00</span></div>
                     <div className="stars">
                         <FontAwesomeIcon icon={faStar} />
