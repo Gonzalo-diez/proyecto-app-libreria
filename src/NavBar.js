@@ -9,7 +9,7 @@ function Menu() {
         <header>
 
 
-        <a href="#" class="logo">La libreria</a>
+        <a href="#" className="logo">La libreria</a>
 
         <nav className="navbar">
             <a href="./app.js">Inicio</a>

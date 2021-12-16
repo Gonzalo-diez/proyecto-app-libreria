@@ -1,38 +1,46 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Component } from "react/cjs/react.development";
-import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faMinus, faPlus, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 
-class ItemCount extends Component {
-    constructor(props) {
-        super(props)
+function ItemCount({stock = 20, initial = 1, onAdd}) {
+    const [contador, setContador] = useState(initial)
 
-        this.state = {counter: 1}
+
+    const aumentarContador = () => {
+        setContador(contador + 1);
     }
 
-    add() {
-        this.setState({counter: this.state.counter + 1});
+    const disminuirContador = () => {
+        setContador(contador - 1);
     }
 
-    subtract() {
-        this.setState({counter: this.state.counter - 1});
+    const limiteContador = () => {
+        if(contador === stock) {
+            alert("Ya se acabo el stock")
+        }
     }
 
-    render() {
+    const agregarCarrito = () => {
+        alert("Agregado al carrito!!")
+    }
+
         return(
             <div className="card">
                 <div className="shopCount">
                     <h1>Contador</h1>
-                    <h2>{this.state.counter}</h2>
+                    <h2>{contador}</h2>
                 </div>
-                <div className="botones">
-                    <button onClick={this.add.bind(this)}><FontAwesomeIcon icon={faPlus} /></button>
-                    <button onClick={this.subtract.bind(this)}><FontAwesomeIcon icon={faMinus} /></button>
+                <div className="botones" onClick={limiteContador}>
+                    <button onClick={aumentarContador}><FontAwesomeIcon icon={faPlus} /></button>
+                    <button onClick={disminuirContador}><FontAwesomeIcon icon={faMinus} /></button>
+                </div>
+                <div>
+                <button onClick={agregarCarrito}><FontAwesomeIcon icon={faShoppingCart}/></button>
                 </div>
             </div>
         )
     }
-}
 
 export default ItemCount
