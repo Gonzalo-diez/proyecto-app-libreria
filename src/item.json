@@ -1,0 +1,6 @@
+[
+    {"id": 1, "title": "Saga de libros Harry Potter", "price": "$10000", "author":"J.K Rowling", "image":"./saga-harry-potter.png"},
+    {"id": 2, "title": "Saga de libros Percy Jackson", "price": "$10000", "author":"Rick Riordan", "image":"./saga-percy-jackson.png"},
+    {"id": 3, "title": "Saga de libros Narnia", "price": "$10000", "author":"C.S Lewis", "image":"./saga-narnia.png"},
+    {"id": 4, "title": "Saga de libros Maze Runner","price": "$10000", "author":"John Dashner", "image": "./saga-maze-runner.png"}
+]

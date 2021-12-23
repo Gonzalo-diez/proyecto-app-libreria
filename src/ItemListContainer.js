@@ -1,12 +1,18 @@
 import { render } from "@testing-library/react";
 import React from "react";
+import ItemList from "./ItemList"
 
-const ItemListContainer = (greetings) => {
+
+function ItemListContainer ({greetings}) {
+    <ItemList />
     const name = "Usuario"
     return(
-        <p>
-            Bienvenido {name}, a mi E-commerce
-        </p>
+        <div>
+            <p>
+                Bienvenido {name}, a mi E-commerce
+            </p>
+            
+        </div>
     )
 }
 

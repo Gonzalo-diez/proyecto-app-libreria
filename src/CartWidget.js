@@ -1,13 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart, faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
-import { Component } from "react/cjs/react.development";
 
-class CartWidget extends Component {
-    constructor(props) {
-        super(props)
-    }
-    render() {
+
+
+function CartWidget() {
     return (
         <div className="icons">
             <FontAwesomeIcon icon={faHeart} />
@@ -15,7 +12,6 @@ class CartWidget extends Component {
             <FontAwesomeIcon icon={faUser} />
         </div>
     )
-    }
 }
 
 export default CartWidget

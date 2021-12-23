@@ -48,16 +48,6 @@ header .navbar a:hover {
     color: var(--celeste);
 }
 
-#menu-bar {
-    font-size: 2.5rem;
-    padding: .5rem 1.5rem;
-    border: .1rem solid var(--negro);
-    color: var(--negro);
-    border-radius: .3rem;
-    cursor: pointer;
-    display: none;
-}
-
 .dropdown {
     margin-left: 32.5rem;
     margin-top: -2rem;
@@ -94,4 +84,25 @@ header .navbar a:hover {
 .dropdown:hover .pags,
 .dropdown .pags.show {
     max-height: 400px;
+}
+
+.dropdown2 {
+    background: var(--blanco);
+    color: var(--negro);
+}
+
+.dropdown2 .cart{
+    overflow: hidden;
+    transition: all 1s;
+    list-style-type: none;
+    border: .1rem var(--blanco) solid;
+    border-radius: .2rem var(--negro);
+    background: var(--blanco);
+    color: var(--negro);
+}
+
+.dropdown2 .cart .cartBox {
+    width: 100%;
+    background: var(--blanco);
+    color: var(--negro);
 }
