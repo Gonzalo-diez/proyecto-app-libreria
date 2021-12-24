@@ -27,6 +27,9 @@ function ItemList() {
             <p>nada</p>
         )
     }
+    else return (
+        [productos]
+    )
 }
 
 export default ItemList;
