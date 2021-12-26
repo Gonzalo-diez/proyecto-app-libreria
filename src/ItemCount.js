@@ -21,6 +21,9 @@ function ItemCount({stock = 20, initial = 1, onAdd}) {
             setContador(contador - 1)
             alert("Ya se acabo el stock")
         }
+        else if (contador === 0) {
+            setContador(contador + 1)
+        }
     }
 
     const agregarCarrito = () => {
