@@ -1,9 +1,9 @@
 import React from "react";
-import item from "./item.json"
+import Item from "./Item"
 import { useEffect,useState } from "react";
 
 
-const productosNuevos = item
+
 
 function ItemList() {
     const [productos, setProductos] = useState([])
@@ -12,24 +12,25 @@ function ItemList() {
     useEffect(() => {
         const promesa = new Promise((res, rej) => {
             setTimeout(() => {
-                res(productosNuevos)
+                res(<Item />)
             }, 2000)
         })
-        promesa.then((productosNuevos) => {
-            console.log(productosNuevos)
+        promesa.then((productos) => {
             setLoading(false)
-            setProductos()
+            setProductos(productos)
         })
     }, [])
 
     if(loading) {
         return (
-            <p>nada</p>
+            <p>cargando ...</p>
         )
     }
-    else return (
-        [productos]
-    )
+    else{
+        return (
+            <Item />
+        )
+    }
 }
 
 export default ItemList;

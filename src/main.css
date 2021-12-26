@@ -2,11 +2,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
+    padding: 5rem;
 }
 
 .products .box-container .box {
     border: .1rem solid rgba(0, 0, 0, 1);
-    border-radius: .5rem;
+    border-radius: 6em;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -19,7 +20,7 @@
 }
 
 .products .box-container .box img {
-    height: 10rem;
+    height: 20rem;
     filter: drop-shadow(0 .5rem 1rem rgba(0, 0, 0, 1));
     margin: 8rem 2rem;
     width: 25%;

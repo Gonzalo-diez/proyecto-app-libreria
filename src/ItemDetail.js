@@ -4,7 +4,7 @@ import { faHeart, faEye, faShare, faStar} from '@fortawesome/free-solid-svg-icon
 import ItemCount from "./ItemCount";
 
 
-function Item() {
+function ItemDetail() {
 
 
 return (
@@ -102,4 +102,4 @@ return (
 )
 }
 
-export default Item;
+export default ItemDetail;
