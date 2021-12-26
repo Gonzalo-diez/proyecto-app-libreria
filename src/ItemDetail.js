@@ -1,105 +1,26 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faEye, faShare, faStar} from '@fortawesome/free-solid-svg-icons'
-import ItemCount from "./ItemCount";
 
 
-function ItemDetail() {
+const detail = [
+    {id: 1, title: "Saga de libros Harry Potter", price: "$10000", author:"J.K Rowling", image:"./saga-harry-potter.png", detail: "Saga de libros de Harry Potter"},
+    {id: 2, title: "Saga de libros Percy Jackson", price: "$10000", author:"Rick Riordan", image:"./saga-percy-jackson.png", detail: "Saga de libros de Percy Jackson"},
+    {id: 3, title: "Saga de libros Narnia", price: "$10000", author:"C.S Lewis", image:"./saga-narnia.png", detail: "Saga de libros de Narnia"},
+    {id: 4, title: "Saga de libros Maze Runner",price: "$10000", author:"James Dashner", image: "./saga-maze-runner.png", detail: "Saga de libros de Maze Runner"}
+]
 
-
-return (
-        <section className="products">
-
-    <h1 className="heading">Ultimos <span>productos</span></h1>
-    <div className="box-container">
-        <div className="box">
-            <div className="icons">
-                <FontAwesomeIcon icon={faHeart} />
-                <FontAwesomeIcon icon={faShare} />
-                <FontAwesomeIcon icon={faEye} />
-            </div>
-            <img src="./saga-harry-potter.png" />
-            <div className="content">
-                <h3>Saga de libros Harry Potter</h3>
-                <div className="precio">$14500 <span>$18500.00</span></div>
-                <div className="stars">
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
+const ItemDetail = () => {
+    return (
+        detail.map((elemento, indice) => {
+            return (
+                <div className="descripciones" key={indice}>
+                    <h2>{elemento.title}</h2>
+                    <h3>{elemento.author}</h3>
+                    <img src={elemento.image} />
+                    <p>{elemento.detail}</p>
                 </div>
-                <button className="btn">Agregar al carrito</button>
-            </div>
-            <ItemCount />
-        </div>
-        
-        <div className="box">
-            <div className="icons">
-                <FontAwesomeIcon icon={faHeart} />
-                <FontAwesomeIcon icon={faShare} />
-                <FontAwesomeIcon icon={faEye} />
-            </div>
-            <img src="./saga-percy-jackson.png" />
-            <div className="content">
-                <h3>Saga de percy Jackson</h3>
-                <div className="precio">$13000.00 <span>$15500.00</span></div>
-                <div className="stars">
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                </div>
-                <button className="btn">Agregar al carrito</button>
-                <ItemCount />
-            </div>
-        </div>
-
-        <div className="box">
-            <div className="icons">
-                <FontAwesomeIcon icon={faHeart} />
-                <FontAwesomeIcon icon={faShare} />
-                <FontAwesomeIcon icon={faEye} />
-            </div>
-            <img src="./saga-narnia.png" />
-            <div className="content">
-                <h3>Saga de Narnia</h3>
-                <div className="precio">$16000.00 <span>$20500.00</span></div>
-                <div className="stars">
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                </div>
-                <button className="btn">Agregar al carrito</button>
-                <ItemCount />
-            </div>
-        </div>
-
-        <div className="box">
-            <div className="icons">
-                <FontAwesomeIcon icon={faHeart} />
-                <FontAwesomeIcon icon={faShare} />
-                <FontAwesomeIcon icon={faEye} />
-            </div>
-            <img src="./saga-maze-runner.png" />
-            <div class="content">
-                <h3>Saga de Maze Runner</h3>
-                <div className="precio">$15800.00 <span>$21000.00</span></div>
-                <div className="stars">
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                </div>
-                <button className="btn">Agregar al carrito</button>
-                <ItemCount />
-            </div>
-        </div>
-
-    </div>
-
-    </section>
-)
+            )
+        })
+    )
 }
 
 export default ItemDetail;
