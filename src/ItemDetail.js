@@ -1,4 +1,6 @@
 import React from "react";
+import NavBar from "./NavBar"
+import Footer from "./Footer"
 
 
 const detail = [
@@ -12,12 +14,16 @@ const ItemDetail = () => {
     return (
         detail.map((elemento, indice) => {
             return (
-                <div className="descripciones" key={indice}>
-                    <h2>{elemento.title}</h2>
-                    <h3>{elemento.author}</h3>
-                    <img src={elemento.image} />
-                    <p>{elemento.detail}</p>
-                </div>
+                <>
+                    <NavBar />
+                    <div className="descripciones" key={indice}>
+                        <h2>{elemento.title}</h2>
+                        <h3>{elemento.author}</h3>
+                        <img src={elemento.image} />
+                        <p>{elemento.detail}</p>
+                    </div>
+                    <Footer />
+                </>
             )
         })
     )
