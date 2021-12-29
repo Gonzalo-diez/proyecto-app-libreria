@@ -48,6 +48,19 @@ header .navbar a:hover {
     color: var(--celeste);
 }
 
+.icons button{
+    background: var(--blanco);
+}
+
+.cartBox {
+    background: var(--blanco);
+    display: flex;
+}
+
+.cartBox .cartImage {
+    height: 2rem;
+}
+
 .dropdown {
     margin-left: 32.5rem;
     margin-top: -2rem;

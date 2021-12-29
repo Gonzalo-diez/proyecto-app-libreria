@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect,useState } from "react";
-import { BrowserRouter, Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEye, faShare, faStar} from '@fortawesome/free-solid-svg-icons'
@@ -42,7 +41,6 @@ function ItemList() {
         return (
             productos.map((elemento, indice) => {
                 return (
-                    <BrowserRouter>
                         <section className="products" key={indice}>
         
                             
@@ -65,14 +63,13 @@ function ItemList() {
                                         </div>
                                         <button className="btn">Agregar al carrito</button>
                                     </div>
-                                    <button> <Link to={<ItemDetailContainer />}>Ver más del producto</Link> </button>
+                                    <button> Ver más del producto </button>
                                     <ItemCount />
                                 </div>
                                 
                             </div>
         
                         </section>
-                    </BrowserRouter>
                     )
             })
         )}
