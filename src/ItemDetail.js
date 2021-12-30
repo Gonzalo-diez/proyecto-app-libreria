@@ -1,19 +1,17 @@
 import React from "react";
-import NavBar from "./NavBar"
-import Footer from "./Footer"
+import ItemList from "./ItemList"
 
 
 function ItemDetail() {
     return (
+      const items = item
                 <>
-                    <NavBar />
                     <div className="descripciones">
-                        <h2>Saga de libros harry Potter</h2>
-                        <h3>Autor/a: J.K Rowling</h3>
-                        <img src="./saga-harry-potter.png" />
+                        <h2>{item.title}</h2>
+                        <h3>{item.author}</h3>
+                        <img src={item.image} />
                         <p>Resumen: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores corrupti quos nobis.</p>
                     </div>
-                    <Footer />
                 </>
             )
 }
