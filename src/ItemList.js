@@ -4,7 +4,7 @@ import ItemCount from "./ItemCount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEye, faShare, faStar} from '@fortawesome/free-solid-svg-icons'
 import "./main.css"
-import ItemDetailContainer from "./ItemDetailContainer";
+
 
 
 
