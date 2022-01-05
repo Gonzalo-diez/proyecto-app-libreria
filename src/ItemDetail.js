@@ -34,7 +34,7 @@ function ItemDetail() {
                 <div className="descripciones">
                     <h2>{myItem.title}</h2>
                     <h3>{myItem.author}</h3>
-                    <img src={myItem.image} />
+                    <img src={myItem.image} alt={myItem.title} />
                     <p>Resumen: {myItem.detail}</p>
                 </div>
             )

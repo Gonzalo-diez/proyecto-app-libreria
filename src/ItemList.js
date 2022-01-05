@@ -3,6 +3,8 @@ import { useEffect,useState } from "react";
 import ItemCount from "./ItemCount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEye, faShare, faStar} from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom"
+import ItemDetailContainer from "./ItemDetailContainer"
 import "./main.css"
 
 
@@ -51,7 +53,7 @@ function ItemList() {
                                         <FontAwesomeIcon icon={faShare} />
                                         <FontAwesomeIcon icon={faEye} />
                                     </div>
-                                    <img src={elemento.image} />
+                                    <img src={elemento.image} alt={elemento.title} />
                                     <div className="content">
                                         <h3>{elemento.title}</h3>
                                         <div className="precio">{elemento.price} <span>$18500.00</span></div>
@@ -63,7 +65,7 @@ function ItemList() {
                                         </div>
                                         <button className="btn">Agregar al carrito</button>
                                     </div>
-                                    <button> Ver más del producto </button>
+                                    <button> <Link to={<ItemDetailContainer />}>Ver más del producto</Link> </button>
                                     <ItemCount />
                                 </div>
                                 

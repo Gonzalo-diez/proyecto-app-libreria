@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect,useState } from "react";
-import ItemCount from "./ItemCount";
 
 
 function CartCount() {
@@ -36,7 +35,7 @@ function CartCount() {
                 <div className="cartBox" key={indice}>
                     <div className="cartContent">
                         <h3 className="cartTitle">{elemento.title}</h3>
-                        <img className="cartImage" src={elemento.image} />
+                        <img className="cartImage" src={elemento.image} alt={elemento.title} />
                     </div>
                 </div>
             )
