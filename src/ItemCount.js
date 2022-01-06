@@ -28,7 +28,7 @@ function ItemCount({stock = 20, initial = 1, onAdd}) {
 
     const agregarCarrito = () => {
         setAgregar(agregar)
-        alert("Se a agregado al Carrito")
+        console.log("Se a agregado al Carrito " + contador)
     }
 
         return(
