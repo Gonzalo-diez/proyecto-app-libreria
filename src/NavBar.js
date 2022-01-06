@@ -23,7 +23,7 @@ function Menu() {
                         <li><Link to="/Generos">Policiaco</Link></li>
                         <li><Link to="/Generos">Romance</Link></li>
                         <li><Link to="/Generos">Ciencia Ficción</Link></li>
-                        <li><Link to="/Generos">Aventuras</Link></li>
+                        <li><Link to="/Generos">Fantasia</Link></li>
                     </ul>
                 </div>
         </nav>

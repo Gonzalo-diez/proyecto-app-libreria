@@ -7,6 +7,7 @@ import Generos from "./Generos"
 import "./main.css"
 import { Route, Routes } from 'react-router-dom';
 import ItemListContainer from './ItemListContainer';
+import ItemDetailContainer from './ItemDetailContainer';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/Destacados" element={<ItemListContainer />} />
           <Route path="/Ayuda" element={<Ayuda />} />
           <Route path="/Generos" element={<Generos />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
         </Routes>
       <Footer />
     </div>

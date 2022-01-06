@@ -119,3 +119,17 @@ header .navbar a:hover {
     background: var(--blanco);
     color: var(--negro);
 }
+
+.ayuda {
+    border: .1rem solid rgba(0, 0, 0, 1);
+    border-radius: .1rem;
+    width: 50rem;
+    margin: 2rem;
+    padding: 0.5rem;
+}
+
+.btnAyuda {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 50rem;
+}

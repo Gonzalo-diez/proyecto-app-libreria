@@ -4,7 +4,6 @@ import ItemCount from "./ItemCount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEye, faShare, faStar} from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom"
-import ItemDetailContainer from "./ItemDetailContainer"
 import "./main.css"
 
 
@@ -65,7 +64,7 @@ function ItemList() {
                                         </div>
                                         <button className="btn">Agregar al carrito</button>
                                     </div>
-                                    <button> <Link to={<ItemDetailContainer />}>Ver más del producto</Link> </button>
+                                    <button> <Link to="/item/:id">Ver más del producto</Link> </button>
                                     <ItemCount />
                                 </div>
                                 

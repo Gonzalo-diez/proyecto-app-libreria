@@ -1,0 +1,21 @@
+.box-container {
+    display: flex;
+    padding: 5rem;
+}
+
+.box-container .box {
+    border: .1rem solid rgba(0, 0, 0, 1);
+    border-radius: 0.1rem;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.box-container .content {
+    margin: 5rem;
+}
+
+.box-container img {
+    width: 12rem;
+    height: 15rem;
+}
+

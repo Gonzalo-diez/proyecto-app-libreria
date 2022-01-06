@@ -15,14 +15,14 @@ function ItemDetail() {
     useEffect(() => {
         const promesa = new Promise((res, rej) => {
             setTimeout(() => {
-                res(myItemArray.find(elemento => elemento.title === "Saga de libros Harry Potter"))
+                res(myItemArray.find(elemento => elemento.title === ""))
             }, 2000)
         })
         promesa.then((detalle) => {
             setLoading(false)
             setMyItem(detalle)
         })
-    }, [])
+    })
 
     if(loading) {
         return (
