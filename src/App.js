@@ -4,10 +4,12 @@ import Main from "./Main"
 import Footer from "./Footer"
 import Ayuda from "./Ayuda"
 import Generos from "./Generos"
-import "./main.css"
-import { Route, Routes } from 'react-router-dom';
 import ItemListContainer from './ItemListContainer';
 import ItemDetailContainer from './ItemDetailContainer';
+import Error from "./Error";
+import "./main.css"
+import { Route, Routes } from 'react-router-dom';
+
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
           <Route path="/Ayuda" element={<Ayuda />} />
           <Route path="/Generos" element={<Generos />} />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       <Footer />
     </div>
