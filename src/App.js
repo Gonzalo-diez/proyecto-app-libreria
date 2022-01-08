@@ -8,11 +8,13 @@ import ItemListContainer from './ItemListContainer';
 import ItemDetailContainer from './ItemDetailContainer';
 import Error from "./Error";
 import "./main.css"
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useParams } from 'react-router-dom';
 
 
 
 function App() {
+  const { id } = useParams()
+
   return (
     <div>
       <NavBar />
@@ -21,7 +23,7 @@ function App() {
           <Route path="/Destacados" element={<ItemListContainer />} />
           <Route path="/Ayuda" element={<Ayuda />} />
           <Route path="/Generos" element={<Generos />} />
-          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} key={id} />
           <Route path="*" element={<Error />} />
         </Routes>
       <Footer />

@@ -12,7 +12,7 @@ function ItemDetail() {
     useEffect(() => {
         const promesa = new Promise((res, rej) => {
             setTimeout(() => {
-                res(Items.find(elemento => elemento.title))
+                res(Items.find(elemento => elemento.id === 2))
             }, 2000)
         })
         promesa.then((detalle) => {
