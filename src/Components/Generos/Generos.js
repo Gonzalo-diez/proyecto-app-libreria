@@ -1,7 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react"
-import "./genero.css"
+import "../CSS/genero.css"
 
+
+//Array de items sobre los generos de libros
 const items = [
     {id: 1, title: "Policiaco", image: "./genero-policiaco.jpg"},
     {id: 2, title: "Romance", image: "./genero-romance.jpg"},
@@ -14,6 +16,7 @@ function Generos() {
     const [loading, setLoading] = useState(true)
     
     useEffect(() => {
+        //promesa para cargar los items en respuesta, pero que debe de esperar 2 segundos
         const promesa = new Promise((res, rej) => {
             setTimeout(() => {
                 res(items)
@@ -27,10 +30,11 @@ function Generos() {
 
     if(loading) {
         return (
-            <p>cargando ...</p>
+            <p className="carga">cargando ...</p>
         )
     }
     else {
+        //Retorno de la app sobre los generos de libros, con metodo .map() para que muestre todos los generos
         return(
             genero.map((elemento, indice) => {
                 return (

@@ -41,7 +41,7 @@ function ItemCount({stock = 20, initial = 1, onAdd}) {
                     <button onClick={aumentarContador}><FontAwesomeIcon icon={faPlus} /></button>
                     <button onClick={disminuirContador}><FontAwesomeIcon icon={faMinus} /></button>
                 </div>
-                <div>
+                <div className="cartIcon">
                 <button onClick={agregarCarrito}><FontAwesomeIcon icon={faShoppingCart}/></button>
                 </div>
             </div>

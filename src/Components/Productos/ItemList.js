@@ -1,13 +1,15 @@
 import React from "react";
 import { useEffect,useState } from "react";
-import ItemCount from "./ItemCount";
+import ItemCount from "../Items/ItemCount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEye, faShare, faStar} from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom"
-import "./main.css"
-import { Items } from "./items.json"
+import "../CSS/main.css"
+import { Items } from "../Items/items.json"
 
 function ItemList() {
+    //Función para renderizar los items de items.json, utilizando el useEffect (hook de efecto), useState y promesa
+    //Represanta el ciclo de vida de los productos destacados y del main.js
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
 
@@ -25,10 +27,11 @@ function ItemList() {
 
     if(loading) {
         return (
-            <p>cargando ...</p>
+            <p className="carga">cargando ...</p>
         )
     }
     else{
+        //Utilizo el metodo .map() para aplicar los elementos de la función 
         return (
             productos.map((elemento, indice) => {
                 return (
@@ -54,7 +57,7 @@ function ItemList() {
                                         </div>
                                         <button className="btn">Agregar al carrito</button>
                                     </div>
-                                    <Link to="/item/:id">Ver más del producto</Link>
+                                    <Link to={"/item/:{elemento.id}"}>Ver más del producto</Link>
                                     <ItemCount />
                                 </div>
                                 

@@ -1,0 +1,8 @@
+.ayudaBox {
+    text-align: center;
+}
+
+.btnAyuda  button{
+    margin-left: 50rem;
+    display: flex;
+}

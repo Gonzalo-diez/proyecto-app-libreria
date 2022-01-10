@@ -1,13 +1,13 @@
-import './App.css';
-import NavBar from "./NavBar"
-import Main from "./Main"
-import Footer from "./Footer"
-import Ayuda from "./Ayuda"
-import Generos from "./Generos"
-import ItemListContainer from './ItemListContainer';
-import ItemDetailContainer from './ItemDetailContainer';
-import Error from "./Error";
-import "./main.css"
+import "../src/Components/CSS/App.css"
+import NavBar from "../src/Components/Menu/NavBar"
+import Main from "../src/Components/Productos/Main"
+import Footer from "../src/Components/Menu/Footer"
+import Ayuda from "../src/Components/Complementario/Ayuda"
+import Generos from "../src/Components/Generos/Generos"
+import ItemListContainer from '../src/Components/Productos/ItemListContainer';
+import ItemDetailContainer from '../src/Components/Productos/ItemDetailContainer';
+import Error from "../src/Components/Complementario/Error";
+import "../src/Components/CSS/main.css"
 import { Route, Routes, useParams } from 'react-router-dom';
 
 

@@ -1,3 +1,7 @@
+.carga {
+    text-align: center;
+}
+
 .products .box-container {
     display: flex;
     flex-wrap: wrap;

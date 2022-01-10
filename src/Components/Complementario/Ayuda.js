@@ -1,10 +1,11 @@
 import React from "react";
-import "./App.css"
+import "../CSS/App.css"
+import "../CSS/ayuda.css"
 
 function Ayuda() {
     return (
         //Aqui es donde se encuentra la sección de ayuda.
-        <div>
+        <div className="ayudaBox">
             <h1>Si tiene algun problema, consulta o queja escriba aquí: </h1>
             <textarea className="ayuda" cols="30" rows="10" placeholder="Escriba su problema o consulta"></textarea>
             <div className="btnAyuda">

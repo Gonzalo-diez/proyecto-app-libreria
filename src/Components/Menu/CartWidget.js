@@ -6,6 +6,7 @@ import { faShoppingCart, faHeart, faUser } from '@fortawesome/free-solid-svg-ico
 
 
 function CartWidget() {
+    //Iconos para el menu de la app
     return (
         <div className="icons">
             <FontAwesomeIcon icon={faHeart} />

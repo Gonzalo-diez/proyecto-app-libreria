@@ -1,34 +1,37 @@
 import React from "react";
 import {useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
-import { Items } from "./items.json"
+import { Items } from "../Items/items.json"
+import "../CSS/detalle.css"
 
 function ItemDetail() {
     const [myItem,setMyItem] = useState([])
     const [loading,setLoading] = useState(true)
+    const detalle = Items
     const { id } = useParams()
-    console.log({id})
 
     useEffect(() => {
         const promesa = new Promise((res, rej) => {
             setTimeout(() => {
-                res(Items.find(elemento => elemento.id === 2))
+                res(detalle.find(elemento => elemento.id = detalle))
             }, 2000)
         })
         promesa.then((detalle) => {
-            setLoading(false)
             setMyItem(detalle)
+            setLoading(false)
+            const data = Items.filter(Item => Item.id)
+            console.log(data)
         })
-    })
+    }, [id])
 
     if(loading) {
         return (
-            <p>cargando ...</p>
+            <p className="carga">cargando ...</p>
         )
     }
     else {
             return (
-                <div className="descripciones">
+                <div className="descripciones" key={detalle.id} {...detalle}>
                     <h2>{myItem.title}</h2>
                     <h3>{myItem.author}</h3>
                     <img src={myItem.image} alt={myItem.title} />

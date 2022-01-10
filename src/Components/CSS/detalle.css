@@ -1,0 +1,21 @@
+.descripciones {
+    text-align: center;
+}
+
+.card {
+    display: block;
+}
+
+.card .shopCount {
+    text-align: center;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cartIcon {
+    display: flex;
+    justify-content: center;
+}
