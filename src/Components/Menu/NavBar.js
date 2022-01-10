@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
-import "../CSS/main.css"
+import "../CSS/App.css"
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom"
 

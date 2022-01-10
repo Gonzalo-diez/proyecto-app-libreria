@@ -1,5 +1,5 @@
 import React from "react";
-import "../CSS/main.css"
+import "../CSS/App.css"
 import ItemListContainer from "./ItemListContainer";
 
 

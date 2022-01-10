@@ -1,4 +1,3 @@
-import "../src/Components/CSS/App.css"
 import NavBar from "../src/Components/Menu/NavBar"
 import Main from "../src/Components/Productos/Main"
 import Footer from "../src/Components/Menu/Footer"
@@ -7,14 +6,14 @@ import Generos from "../src/Components/Generos/Generos"
 import ItemListContainer from '../src/Components/Productos/ItemListContainer';
 import ItemDetailContainer from '../src/Components/Productos/ItemDetailContainer';
 import Error from "../src/Components/Complementario/Error";
-import "../src/Components/CSS/main.css"
+import "../src/Components/CSS/App.css"
 import { Route, Routes, useParams } from 'react-router-dom';
 
 
 
 function App() {
   const { id } = useParams()
-
+  //La app con las rutas/Routes y los path que son usados en la app
   return (
     <div>
       <NavBar />

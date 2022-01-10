@@ -1,6 +1,6 @@
 import React from "react";
 import "../CSS/App.css"
-import "../CSS/ayuda.css"
+
 
 function Ayuda() {
     return (

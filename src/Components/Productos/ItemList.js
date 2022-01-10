@@ -4,7 +4,7 @@ import ItemCount from "../Items/ItemCount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEye, faShare, faStar} from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom"
-import "../CSS/main.css"
+import "../CSS/App.css"
 import { Items } from "../Items/items.json"
 
 function ItemList() {
@@ -26,6 +26,7 @@ function ItemList() {
     }, [])
 
     if(loading) {
+        //Render de carga de los datos
         return (
             <p className="carga">cargando ...</p>
         )

@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react"
-import "../CSS/genero.css"
+import "../CSS/App.css"
 
 
 //Array de items sobre los generos de libros

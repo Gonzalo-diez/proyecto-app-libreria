@@ -2,9 +2,12 @@ import React from "react";
 import {useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
 import { Items } from "../Items/items.json"
-import "../CSS/detalle.css"
+import "../CSS/App.css"
 
 function ItemDetail() {
+    //Función para renderizar los detalles de los productos, usando useEffect y UseState
+    //Utilizando {id} en useParams como parametro para el id de los items de items.json
+    //Promesa para renderizar los detalles después de 2 segundos de ser seleccionados
     const [myItem,setMyItem] = useState([])
     const [loading,setLoading] = useState(true)
     const detalle = Items
@@ -25,11 +28,13 @@ function ItemDetail() {
     }, [id])
 
     if(loading) {
+        //Render de carga de los datos
         return (
             <p className="carga">cargando ...</p>
         )
     }
     else {
+        //Estructura del los detalles
             return (
                 <div className="descripciones" key={detalle.id} {...detalle}>
                     <h2>{myItem.title}</h2>
