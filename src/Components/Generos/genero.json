@@ -1,0 +1,26 @@
+{
+    "Policiaco": [
+        {"id": 1, "name": "Estudio en escarlata", "author": "Arthur Conan Doyle", "price": "5000", "image": "./escarlata.jpg"},
+        {"id": 2, "name": "El sabueso de los Baskerville", "author": "Arthur Conan Doyle", "price": "5000", "image": "sabueso.png"},
+        {"id": 3, "name": "Asesinato en el Orient Express", "author": "Agatha Christie", "price": "5000", "image": "./asesinato.jpg"},
+        {"id": 4, "name": "Muerte en el Nilo", "author": "Agatha Christie", "price": "5000", "image": "./muerte.jpg"}
+    ],
+    "Romance": [
+        {"id": 1, "name": "", "author": "", "price": "", "image": ""},
+        {"id": 2, "name": "", "author": "", "price": "", "image": ""},
+        {"id": 3, "name": "", "author": "", "price": "", "image": ""},
+        {"id": 4, "name": "", "author": "", "price": "", "image": ""}
+    ],
+    "Ficcion": [
+        {"id": 1, "name": "", "author": "", "price": "", "image": ""},
+        {"id": 2, "name": "", "author": "", "price": "", "image": ""},
+        {"id": 3, "name": "", "author": "", "price": "", "image": ""},
+        {"id": 4, "name": "", "author": "", "price": "", "image": ""}
+    ],
+    "Fantasia": [
+        {"id": 1, "name": "", "author": "", "price": "", "image": ""},
+        {"id": 2, "name": "", "author": "", "price": "", "image": ""},
+        {"id": 3, "name": "", "author": "", "price": "", "image": ""},
+        {"id": 4, "name": "", "author": "", "price": "", "image": ""}
+    ]
+}

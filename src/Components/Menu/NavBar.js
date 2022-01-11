@@ -17,14 +17,14 @@ function Menu() {
             <Link to="/">Inicio</Link>
             <Link to="/Destacados">Destacados</Link>
             <Link to="/Ayuda">Ayuda</Link>
-            <Link to="/Generos">Generos</Link>
+            <Link to="/Category">Generos</Link>
                 <div id="submenu" className="dropdown">
                     <FontAwesomeIcon icon={faCaretDown} />
                     <ul className="pags">
-                        <li><Link to="/Generos">Policiaco</Link></li>
-                        <li><Link to="/Generos">Romance</Link></li>
-                        <li><Link to="/Generos">Ciencia Ficción</Link></li>
-                        <li><Link to="/Generos">Fantasia</Link></li>
+                        <li><Link to="/Category/id">Policiaco</Link></li>
+                        <li><Link to="/Category/id">Romance</Link></li>
+                        <li><Link to="/Category/id">Ciencia Ficción</Link></li>
+                        <li><Link to="/Category/id">Fantasia</Link></li>
                     </ul>
                 </div>
         </nav>

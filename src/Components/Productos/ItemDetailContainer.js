@@ -1,12 +1,14 @@
 import React from "react";
-import ItemCount from "../Items/ItemCount";
 import ItemDetail from "./ItemDetail"
 
+
 const ItemDetailContainer = () => {
+    function onAdd() {
+        console.log("Compra hecha")
+    }
     return (
         <div>
-            <ItemDetail />
-            <ItemCount />
+            <ItemDetail onAdd={onAdd} />
         </div>
     )
 }

@@ -2,28 +2,26 @@ import React from "react";
 import {useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
 import { Items } from "../Items/items.json"
+import ItemCount from "../Items/ItemCount";
 import "../CSS/App.css"
 
-function ItemDetail() {
+function ItemDetail({onAdd}) {
     //Función para renderizar los detalles de los productos, usando useEffect y UseState
     //Utilizando {id} en useParams como parametro para el id de los items de items.json
     //Promesa para renderizar los detalles después de 2 segundos de ser seleccionados
     const [myItem,setMyItem] = useState([])
     const [loading,setLoading] = useState(true)
-    const detalle = Items
     const { id } = useParams()
 
     useEffect(() => {
         const promesa = new Promise((res, rej) => {
             setTimeout(() => {
-                res(detalle.find(elemento => elemento.id = detalle))
+                res(Items)
             }, 2000)
         })
-        promesa.then((detalle) => {
-            setMyItem(detalle)
+        promesa.then((myItem) => {
+            setMyItem(myItem.find(i => i.id === id))
             setLoading(false)
-            const data = Items.filter(Item => Item.id)
-            console.log(data)
         })
     }, [id])
 
@@ -36,11 +34,15 @@ function ItemDetail() {
     else {
         //Estructura del los detalles
             return (
-                <div className="descripciones" key={detalle.id} {...detalle}>
-                    <h2>{myItem.title}</h2>
-                    <h3>{myItem.author}</h3>
+                <div className="descripciones">
+                    <h2>Libro: {myItem.title}</h2>
+                    <h3>Autor: {myItem.author}</h3>
                     <img src={myItem.image} alt={myItem.title} />
                     <p>Resumen: {myItem.detail}</p>
+                    <h4>Precio: {myItem.price}</h4>
+                    <div>
+                        <ItemCount onAdd={onAdd} />
+                    </div>
                 </div>
             )
     }

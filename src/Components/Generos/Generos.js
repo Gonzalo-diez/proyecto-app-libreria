@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import "../CSS/App.css"
 
 
@@ -43,7 +44,7 @@ function Generos() {
                             <img src={elemento.image} alt={elemento.title} />
                         </div>
                         <div className="content">
-                            <button><h2>{elemento.title}</h2></button>
+                            <Link to="/Category/:id">{elemento.title}</Link>
                         </div>
                     </div>
                 )
