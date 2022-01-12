@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { Items } from "../Items/items.json"
 
 function GenerosList({elemento}) {
+    //Uso del useState y useEffect para la promesa
     const [myGenero, setGenero] = useState([])
     const [loading, setLoading] = useState(true)
     const { genero } = useParams()
@@ -15,6 +16,7 @@ function GenerosList({elemento}) {
             }, 2000)
         })
         promesa.then((x) => {
+            //Filtro del según el genero del libro
             setGenero(x.filter(i => i.genero == genero))
             setLoading(false)
         })
@@ -27,6 +29,7 @@ function GenerosList({elemento}) {
         )
     }
     else {
+        //Retorno de la función con los libros fitrados por genero
         return(
             myGenero.map((elemento, indice) => {
                 return(
