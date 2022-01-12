@@ -58,8 +58,8 @@ function ItemList() {
                                         </div>
                                         <button className="btn">Agregar al carrito</button>
                                     </div>
-                                    <Link to="/item/:id">Ver más del producto</Link>
-                                    <ItemCount />
+                                    <Link to={`/item/${elemento.id}`}>Ver más del producto</Link>
+                                    <ItemCount elemento={elemento.title} />
                                 </div>
                                 
                             </div>

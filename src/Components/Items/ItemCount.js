@@ -4,7 +4,8 @@ import { faMinus, faPlus, faShoppingCart } from "@fortawesome/free-solid-svg-ico
 import { useState } from "react";
 
 
-function ItemCount({stock = 20, initial = 1, onAdd}) {
+
+function ItemCount({stock = 20, initial = 1, onAdd, elemento, myItem}) {
     const [contador, setContador] = useState(initial)
     const [agregar, setAgregar] = useState(onAdd)
 
@@ -28,7 +29,8 @@ function ItemCount({stock = 20, initial = 1, onAdd}) {
 
     const agregarCarrito = () => {
         setAgregar(agregar)
-        console.log("Se a agregado al Carrito " + contador + "el producto seleccionado")
+        console.log(contador + " Se ha agregado al carrito " + elemento)
+        console.log(contador + " Se ha agregado al carrito " + myItem)
     }
 
         return(

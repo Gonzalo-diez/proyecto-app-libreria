@@ -1,25 +1,24 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Policiaco, Romance, Ficcion, Fantasia } from "./genero.json"
+import { Items } from "../Items/items.json"
 
 function GenerosList() {
     const [genero, setGenero] = useState([])
     const [loading, setLoading] = useState(true)
-    const { id } = useParams()
-    const lista = { Policiaco, Romance, Ficcion, Fantasia }
+    const { genre } = useParams()
 
     useEffect(() => {
         const promesa = new Promise((res, rej) => {
             setTimeout(() => {
-                res(lista)
+                res(Items)
             }, 2000)
         })
-        promesa.then((productos) => {
-            setGenero(productos.find(i => i.id === id))
+        promesa.then((x) => {
+            setGenero(x.find(i => i.genre == genre))
             setLoading(false)
         })
-    }, [id])
+    }, [genre])
 
     if(loading) {
         //Render de carga de los datos

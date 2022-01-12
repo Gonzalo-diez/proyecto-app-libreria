@@ -5,7 +5,8 @@ import { Items } from "../Items/items.json"
 import ItemCount from "../Items/ItemCount";
 import "../CSS/App.css"
 
-function ItemDetail({onAdd}) {
+
+function ItemDetail() {
     //Función para renderizar los detalles de los productos, usando useEffect y UseState
     //Utilizando {id} en useParams como parametro para el id de los items de items.json
     //Promesa para renderizar los detalles después de 2 segundos de ser seleccionados
@@ -19,8 +20,8 @@ function ItemDetail({onAdd}) {
                 res(Items)
             }, 2000)
         })
-        promesa.then((myItem) => {
-            setMyItem(myItem.find(i => i.id === id))
+        promesa.then((x) => {
+            setMyItem(x.find(i => i.id == id))
             setLoading(false)
         })
     }, [id])
@@ -41,7 +42,7 @@ function ItemDetail({onAdd}) {
                     <p>Resumen: {myItem.detail}</p>
                     <h4>Precio: {myItem.price}</h4>
                     <div>
-                        <ItemCount onAdd={onAdd} />
+                        <ItemCount myItem={myItem.title} />
                     </div>
                 </div>
             )
