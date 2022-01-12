@@ -18,6 +18,8 @@
     text-transform: capitalize;
     transition: all .2s linear;
 }
+
+
 /*Menú de app*/
 header {
     position: relative;
@@ -52,65 +54,6 @@ header .navbar a:hover {
     background: var(--blanco);
 }
 
-.dropdown {
-    margin-left: 32.5rem;
-    margin-top: -2rem;
-}
-
-.dropdown i {
-    font-size: 2.5rem;
-}
-
-.dropdown i:hover {
-    color: var(--celeste);
-}
-
-.dropdown .pags {
-    position: absolute;
-    max-height: 0px;
-    overflow: hidden;
-    transition: all 1s;
-    list-style-type: none;
-    border: .1rem var(--blanco) solid;
-    border-radius: .2rem var(--negro);
-}
-
-.dropdown .pags li {
-    width: 100%;
-    background: var(--blanco);
-    color: var(--negro);
-}
-
-.dropdown .pags li:hover {
-    color: var(--celeste);
-}
-
-.dropdown:hover .pags,
-.dropdown .pags.show {
-    max-height: 400px;
-}
-
-.dropdown2 {
-    background: var(--blanco);
-    color: var(--negro);
-}
-
-.dropdown2 .cart{
-    overflow: hidden;
-    transition: all 1s;
-    list-style-type: none;
-    border: .1rem var(--blanco) solid;
-    border-radius: .2rem var(--negro);
-    background: var(--blanco);
-    color: var(--negro);
-}
-
-.dropdown2 .cart .cartBox {
-    width: 100%;
-    background: var(--blanco);
-    color: var(--negro);
-}
-
 /*Sección de destacados*/
 
 .carga {
@@ -121,12 +64,11 @@ header .navbar a:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    padding: 5rem;
 }
 
 .products .box-container .box {
     border: .1rem solid rgba(0, 0, 0, 1);
-    border-radius: 6em;
+    border-radius: 5rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -140,16 +82,22 @@ header .navbar a:hover {
 
 .products .box-container .box img {
     height: 20rem;
+    width: 20%;
     filter: drop-shadow(0 .5rem 1rem rgba(0, 0, 0, 1));
     margin: 8rem 2rem;
-    width: 25%;
 }
 
-.products .box-container .box .botones {
+.products .box-container .box .icons {
     display: flex;
-    justify-content: space-evenly;
+    flex-flow: column;
+    position: absolute;
+    top: 5rem;
+    left: -10rem;
 }
 
+.products .box-container .box:hover .icons {
+    left: 1rem;
+}
 
 /*Elementos del Carrito que me falta desarrollar*/
 
@@ -193,6 +141,10 @@ header .navbar a:hover {
     text-align: center;
 }
 
+.descripciones img {
+    width: 25%;
+}
+
 .card {
     display: block;
 }
@@ -219,7 +171,7 @@ header .navbar a:hover {
 }
 
 .box-container .box {
-    border: .1rem solid rgba(0, 0, 0, 1);
+    border: .1rem solid var(--negro);
     border-radius: 0.1rem;
     text-align: center;
     background: #f9f9f9;
@@ -234,6 +186,23 @@ header .navbar a:hover {
     height: 15rem;
 }
 
+/*Sección de libros según el genero*/
+.listBox {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.listBox .boxGenre {
+    text-align: center;
+    background: #f9f9f9;
+    font-size: 15px;
+}
+
+.listBox .boxGenre img {
+    width: 80%;
+}
 
 /*Pie de página*/
 

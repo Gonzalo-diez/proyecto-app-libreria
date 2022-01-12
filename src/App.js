@@ -21,7 +21,7 @@ function App() {
           <Route path="/" exact element={<Main />} />
           <Route path="/Ayuda" element={<Ayuda />} />
           <Route path="/Category" element={<Generos />} />
-          <Route path="/Category/:genre" element={<GenerosList />} />
+          <Route path="/Category/:genero" element={<GenerosList />} />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="*" element={<Error />} />

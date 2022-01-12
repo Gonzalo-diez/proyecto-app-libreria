@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Items } from "../Items/items.json"
 
-function GenerosList() {
-    const [genero, setGenero] = useState([])
+function GenerosList({elemento}) {
+    const [myGenero, setGenero] = useState([])
     const [loading, setLoading] = useState(true)
-    const { genre } = useParams()
+    const { genero } = useParams()
 
     useEffect(() => {
         const promesa = new Promise((res, rej) => {
@@ -15,10 +15,10 @@ function GenerosList() {
             }, 2000)
         })
         promesa.then((x) => {
-            setGenero(x.find(i => i.genre == genre))
+            setGenero(x.filter(i => i.genero == genero))
             setLoading(false)
         })
-    }, [genre])
+    }, [genero])
 
     if(loading) {
         //Render de carga de los datos
@@ -28,11 +28,17 @@ function GenerosList() {
     }
     else {
         return(
-            <div className="listBox">
-                <img src={genero.image} alt={genero.title} />
-                <h1>{genero.name}</h1>
-                <h2>{genero.author}</h2>
-            </div>
+            myGenero.map((elemento, indice) => {
+                return(
+                    <div className="listBox" key={indice}>
+                        <div className="boxGenre">
+                            <img src={elemento.image} alt={elemento.title} />
+                            <h1>{elemento.title}</h1>
+                            <h2>{elemento.author}</h2>
+                        </div>
+                    </div>
+                )
+            })
         )
     }
 }

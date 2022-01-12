@@ -6,10 +6,10 @@ import "../CSS/App.css"
 
 //Array de items sobre los generos de libros
 const items = [
-    {id: 1, title: "Policiaco", image: "./genero-policiaco.jpg"},
-    {id: 2, title: "Romance", image: "./genero-romance.jpg"},
-    {id: 3, title: "Ciencia Ficción", image: "./genero-ficcion.jpg"},
-    {id: 4, title: "Fantasia", image: "./genero-fantasia.jpg"}
+    {id: 1, title: "Policiaco", image: "./genero-policiaco.jpg", genero: "Policiaco"},
+    {id: 2, title: "Romance", image: "./genero-romance.jpg", genero: "Romance"},
+    {id: 3, title: "Ciencia Ficción", image: "./genero-ficcion.jpg", genero: "Ciencia Ficción"},
+    {id: 4, title: "Fantasia", image: "./genero-fantasia.jpg", genero: "Fantasia"}
 ]
 
 function Generos() {
@@ -44,7 +44,7 @@ function Generos() {
                             <img src={elemento.image} alt={elemento.title} />
                         </div>
                         <div className="content">
-                            <Link to={`/Category/${elemento.genre}`}>{elemento.title}</Link>
+                            <Link to={`/Category/${elemento.genero}`}>{elemento.title}</Link>
                         </div>
                     </div>
                 )
