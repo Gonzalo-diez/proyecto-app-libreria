@@ -1,16 +1,14 @@
-import NavBar from "../src/Components/Menu/NavBar"
-import Main from "../src/Components/Productos/Main"
-import Footer from "../src/Components/Menu/Footer"
-import Ayuda from "../src/Components/Complementario/Ayuda"
-import Generos from "../src/Components/Generos/Generos"
-import GenerosList from "../src/Components/Generos/GenerosList"
-import ItemDetailContainer from '../src/Components/Productos/ItemDetailContainer';
-import Cart from "../src/Components/Carrito/Cart"
-import Error from "../src/Components/Complementario/Error";
-import "../src/Components/CSS/App.css"
+import NavBar from "../Menu/NavBar"
+import Main from "../Productos/Main"
+import Footer from "../Menu/Footer"
+import Ayuda from "../Complementario/Ayuda"
+import Generos from "../Generos/Generos"
+import GenerosList from "../Generos/GenerosList"
+import ItemDetailContainer from '../Productos/ItemDetailContainer';
+import Error from "../Complementario/Error";
+import "../CSS/App.css"
 import { Route, Routes } from 'react-router-dom';
-
-
+import Cart from "../Carrito/Cart"
 
 function App() {
   //La app con las rutas/Routes y los path que son usados en la app

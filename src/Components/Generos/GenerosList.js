@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Items } from "../Items/items.json"
 
-function GenerosList({elemento}) {
+function GenerosList() {
     //Uso del useState y useEffect para la promesa
     const [myGenero, setGenero] = useState([])
     const [loading, setLoading] = useState(true)
@@ -25,7 +25,7 @@ function GenerosList({elemento}) {
     if(loading) {
         //Render de carga de los datos
         return (
-            <p className="carga">cargando ...</p>
+            <p className="carga"></p>
         )
     }
     else {

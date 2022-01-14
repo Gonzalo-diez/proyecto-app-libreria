@@ -3,11 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-
-
-function ItemCount({stock = 20, initial = 1, onAdd, elemento, myItem}) {
+function ItemCount({stock = 20, initial = 0, onAdd, elemento, myItem}) {
     const [contador, setContador] = useState(initial)
-    const [agregar, setAgregar] = useState(onAdd)
+    const [agregar, setAgregar] = useState()
 
     const aumentarContador = () => {
         setContador(contador + 1);
@@ -35,7 +33,8 @@ function ItemCount({stock = 20, initial = 1, onAdd, elemento, myItem}) {
         else {
             console.log(contador + " Se ha agregado al carrito " + myItem)
         }
-    }
+        onAdd(contador)
+    } 
 
         return(
             <div className="card">

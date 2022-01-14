@@ -15,7 +15,6 @@
     outline: none;
     border: none;
     text-decoration: none;
-    text-transform: capitalize;
     transition: all .2s linear;
 }
 
@@ -57,13 +56,28 @@ header .navbar a:hover {
 /*Sección de destacados*/
 
 .carga {
-    text-align: center;
+    top: 0.2rem;
+    left: 40rem;
+    position: relative;
+    width: 100px;
+    height: 100px;
 }
-
-.products .box-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+  
+.carga:before , .carga:after{
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+}
+.carga:after {
+    box-shadow: 0 2px 0 #FF3D00 inset;
+    animation: rotate 2s linear infinite;
+}
+  
+@keyframes rotate {
+    0% {  transform: rotate(0)}
+    100% { transform: rotate(360deg)}
 }
 
 .products .box-container .box {
@@ -72,11 +86,12 @@ header .navbar a:hover {
     text-align: center;
     position: relative;
     overflow: hidden;
-    background: #f9f9f9;
+    background: var(--blanco);
     flex: 1 1 30rem;
 }
 
 .products .box-container .box .content {
+    margin-top: -6rem;
     padding: 1.5rem;
 }
 
@@ -92,7 +107,7 @@ header .navbar a:hover {
     flex-flow: column;
     position: absolute;
     top: 5rem;
-    left: -10rem;
+    left: -9rem;
 }
 
 .products .box-container .box:hover .icons {
@@ -138,11 +153,16 @@ header .navbar a:hover {
 /*Sección de detalles del producto*/
 
 .descripciones {
+    margin-top: 1.5rem;
     text-align: center;
 }
 
 .descripciones img {
     width: 25%;
+}
+
+.descripciones p {
+    font-size: 15px;
 }
 
 .card {
@@ -188,20 +208,20 @@ header .navbar a:hover {
 
 /*Sección de libros según el genero*/
 .listBox {
+    margin-top: 1.5rem;
     text-align: center;
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
 }
 
 .listBox .boxGenre {
     text-align: center;
-    background: #f9f9f9;
+    background: var(--blanco);
     font-size: 15px;
 }
 
 .listBox .boxGenre img {
-    width: 80%;
+    width: 50%;
 }
 
 /*Pie de página*/

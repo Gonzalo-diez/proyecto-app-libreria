@@ -31,7 +31,7 @@ function Generos() {
 
     if(loading) {
         return (
-            <p className="carga">cargando ...</p>
+            <p className="carga"></p>
         )
     }
     else {

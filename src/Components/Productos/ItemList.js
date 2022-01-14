@@ -28,7 +28,7 @@ function ItemList() {
     if(loading) {
         //Render de carga de los datos
         return (
-            <p className="carga">cargando ...</p>
+            <p className="carga"></p>
         )
     }
     else{
@@ -58,6 +58,7 @@ function ItemList() {
                                         </div>
                                         <button className="btn">Agregar al carrito</button>
                                     </div>
+                                    
                                     <Link to={`/item/${elemento.id}`}>Ver más del producto</Link>
                                     <ItemCount elemento={elemento.title} />
                                 </div>
