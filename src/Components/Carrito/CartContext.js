@@ -1,13 +1,24 @@
 import React from "react"
-import { createContext } from "react"
-import { Items } from "../Items/items.json"
+import { createContext, useState } from "react"
 
-function CartContext() {
-    const contexto = createContext({
-        carrito: [],
-        precio_total: 0,
-        cantidad_total: 0
-    })
+
+export const CartContext = createContext({
+    carrito : [],
+    precio_total : 0,
+    cantidad_total : 0
+});
+
+const CartProvider = ({ children }) => {
+    const [cartArray, setCartArray] = useState([])
+    const value = [
+        cartArray,
+    ]
+
+    return(
+        <CartContext.Provider value={value}>
+            {children}
+        </CartContext.Provider>
+    )
 }
 
-export default CartContext
+export default CartProvider
