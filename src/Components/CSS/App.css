@@ -80,6 +80,16 @@ header .navbar a:hover {
     100% { transform: rotate(360deg)}
 }
 
+.products {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.products .box-container {
+    width: 80%;
+}
+
 .products .box-container .box {
     border: .1rem solid rgba(0, 0, 0, 1);
     border-radius: 5rem;
@@ -92,7 +102,6 @@ header .navbar a:hover {
 
 .products .box-container .box .content {
     margin-top: -6rem;
-    padding: 1.5rem;
 }
 
 .products .box-container .box img {
@@ -112,6 +121,12 @@ header .navbar a:hover {
 
 .products .box-container .box:hover .icons {
     left: 1rem;
+}
+
+.products .box-container .box .btnDetail {
+    background-color: var(--blanco);
+    color: var(--negro);
+    font-size: 20px;
 }
 
 /*Elementos del Carrito que me falta desarrollar*/

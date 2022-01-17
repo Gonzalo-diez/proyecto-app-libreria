@@ -5,11 +5,12 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom";
 
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({onAdd}) => {
 
     const [producto, setProducto] = useState({})
     const [loading, setLoading] = useState(false)
     const { id } = useParams()
+    const test = onAdd
 
     useEffect(() => {
         setLoading(true)
@@ -31,7 +32,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            {loading ? <div className="carga"></div> : <ItemDetail  producto={producto}  />}
+            {loading ? <div className="carga"></div> : <ItemDetail  producto={producto} onAdd={test} />}
         </div>
     )
 }

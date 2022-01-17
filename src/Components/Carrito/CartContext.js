@@ -17,8 +17,11 @@ const CartProvider = ({ children }) => {
     
     const agregarProducto = (producto,cantidad) => { 
         console.log(`Agregando: ${cantidad} de productos ${producto.title}`)
-        carrito.push(producto)
-        setCarrito([...carrito])
+        const newObj = {
+            item: producto,
+            cantidad
+        }
+        setCarrito([...carrito, newObj])
     } 
     
     const eliminarProducto = (id) => { 
