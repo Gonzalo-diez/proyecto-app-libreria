@@ -16,12 +16,16 @@ const CartProvider = ({ children }) => {
 
     
     const agregarProducto = (producto,cantidad) => { 
-        console.log(`Agregando: ${cantidad} de productos ${producto.title}`)
-        const newObj = {
-            item: producto,
-            cantidad
-        }
-        setCarrito([...carrito, newObj])
+        if (isInCart(producto.id)) {
+            console.log('ya está el producto en el carrito.'); 
+          } else {
+            console.log(`Agregaste ${producto.title}, cantidad: ${cantidad}.`);
+            const newObj = {
+              item: producto,
+              cantidad
+            }
+            setCarrito([...carrito, newObj])
+          }
     } 
     
     const eliminarProducto = (id) => { 
@@ -34,12 +38,11 @@ const CartProvider = ({ children }) => {
      }
 
     const isInCart = (id) => {
-        return carrito.some(element => element.id == id)
+        return carrito.find(elemento => elemento.id == id)
     }
     
     const productCounter = () => {
-        return carrito.reduce((accum, item) =>
-        accum = accum + item.cantidad, 0)
+        return carrito.reduce((accum, item) => accum = accum + item.count, 0)
     }
     
     const value = { 
