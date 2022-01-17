@@ -14,7 +14,7 @@ function CartWidget() {
         <div className="icons">
             <FontAwesomeIcon icon={faHeart} />
             <Link to={"/Cart"}>
-                <button><FontAwesomeIcon icon={faShoppingCart} />{productCounter}</button>
+                <button><FontAwesomeIcon icon={faShoppingCart} />{productCounter() > 0 && <p>{productCounter()}</p>}</button>
             </Link>
             <FontAwesomeIcon icon={faUser} />
         </div>

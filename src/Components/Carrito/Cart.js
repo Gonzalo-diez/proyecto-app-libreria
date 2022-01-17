@@ -5,7 +5,7 @@ import CartItem from "./CartItem"
 
 const Cart = () => {
 
-    const { carrito, deleteItem } = useContext(CartContext)
+    const { carrito, eliminarProducto } = useContext(CartContext)
 
     if(carrito.length === 0) {
         return(
@@ -17,7 +17,7 @@ const Cart = () => {
     }
     else {
         return (
-            carrito.map(prod => <CartItem key={prod.item.id} producto={prod} deleteItem={deleteItem} />)
+            carrito.map((producto) => <CartItem key={producto.item.id} producto={producto} eliminarProducto={eliminarProducto} />)
         )
     }
 }

@@ -4,7 +4,7 @@ import { createContext, useState } from "react"
 export const CartContext = createContext({
     carrito : [],
     precio_total : 0,
-    cantidad_total : 0
+    cantidad_total : 0 
 });
 
 const { Provider } = CartContext
@@ -29,7 +29,7 @@ const CartProvider = ({ children }) => {
     } 
     
     const eliminarProducto = (id) => { 
-        const updateCart = carrito.filter(element => element.id !== id)
+        const updateCart = carrito.filter(elemento => elemento.item.id !== id)
         setCarrito(updateCart)
     }
     
@@ -38,11 +38,11 @@ const CartProvider = ({ children }) => {
      }
 
     const isInCart = (id) => {
-        return carrito.find(elemento => elemento.id == id)
+        return carrito.find(elemento => elemento.id = id)
     }
     
     const productCounter = () => {
-        return carrito.reduce((accum, item) => accum = accum + item.count, 0)
+        return carrito.reduce((accum, item) => accum = accum + item.cantidad, 0)
     }
     
     const value = { 
@@ -51,7 +51,8 @@ const CartProvider = ({ children }) => {
         cantidad_total , 
         agregarProducto ,
         eliminarProducto , 
-        limpiarCarrito
+        limpiarCarrito ,
+        productCounter
     }
 
     return (
