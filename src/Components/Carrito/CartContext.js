@@ -37,6 +37,11 @@ const CartProvider = ({ children }) => {
         return carrito.some(element => element.id == id)
     }
     
+    const productCounter = () => {
+        return carrito.reduce((accum, item) =>
+        accum = accum + item.cantidad, 0)
+    }
+    
     const value = { 
         carrito, 
         precio_total, 
