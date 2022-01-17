@@ -1,34 +1,18 @@
-import React from "react";
-import { useState, useEffect } from "react"
+import { useContext } from "react"
+import { CartContext } from "./CartContext"
 
+const Cart = () => {
 
-function Cart() {
-    const [cart, setCart] = useState([]);
-    const [loading, setLoading] = useState(true)
+    const { cantidad_total,  } = useContext(CartContext)
 
-    useEffect(() => {
-        const promesa = new Promise((res,rej) => {
-            setTimeout(() => {
-               res() 
-            }, 2000)
-        })
-        promesa.then((x) => {
-            setCart(x)
-            setLoading(false)
-        })
-    }, [])
-
-    if(loading) {
-        //Render de carga de los datos
-        return (
-            <p className="carga"></p>
-        )
-    }
-    else {
-        return (
-            <h2>Aún sigue en construcción {cart}</h2>
-        )
-    }
+    return (
+        <div>
+            <h2>Carrito</h2>
+            <p>Cantidad Total : {cantidad_total}</p>
+            <p>Producto: </p>
+            <button>Quitar</button>
+        </div>
+    )
 }
 
 export default Cart

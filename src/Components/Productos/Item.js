@@ -1,11 +1,17 @@
-import React from "react"
+import React, { useContext } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEye, faShare, faStar} from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom"
 import ItemCount from "../Items/ItemCount";
+import { CartContext } from "../Carrito/CartContext";
 
-function Item({producto, agregadoCart}) {
+
+function Item({producto}) {
     const {title, image, price, id} = producto
+    const { agregarProducto } = useContext(CartContext)
+    const test = (contador) => {
+        agregarProducto(producto, contador)
+    }
 
     return (
         <section className="products">
@@ -28,11 +34,10 @@ function Item({producto, agregadoCart}) {
                                             <FontAwesomeIcon icon={faStar} />
                                             <FontAwesomeIcon icon={faStar} />
                                         </div>
-                                        <button className="btn">Agregar al carrito</button>
                                     </div>
                                     
                                     <Link to={`/item/${id}`}>Ver más del producto</Link>
-                                    <ItemCount producto={title} onClick={agregadoCart} />
+                                    <ItemCount producto={title} onAdd={test} />
                                 </div>
                                 
                             </div>

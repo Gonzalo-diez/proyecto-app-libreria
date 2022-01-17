@@ -1,10 +1,8 @@
-import React from "react";
-import {useState} from "react"
-import { Link } from "react-router-dom"
-import { CartContext } from "../Carrito/CartContext";
-import { useContext } from "react";
+import React, { useState, useContext } from "react";
 import ItemCount from "../Items/ItemCount";
+import { Link } from "react-router-dom";
 import "../CSS/App.css"
+import { CartContext } from "../Carrito/CartContext";
 
 
 function ItemDetail({ producto }) {
@@ -14,10 +12,11 @@ function ItemDetail({ producto }) {
     const { title, price, detail, image, author } = producto
     const [mostrar, setMostrar] = useState(true)
     const { agregarProducto } = useContext(CartContext)
-    const onAdd = (cantidad) => {
+    const test = (contador) => {
         setMostrar(false)
-        agregarProducto(producto, cantidad)
+        agregarProducto(producto, contador)
     }
+    
         //Estructura del los detalles
         if(mostrar) {
             return (
@@ -28,7 +27,7 @@ function ItemDetail({ producto }) {
                     <p>Resumen: {detail}</p>
                     <h4>Precio: {price}</h4>
                     <div>
-                        <ItemCount producto={title} onAdd={onAdd} />
+                        <ItemCount producto={title} onAdd={test} />
                         <Link to={"/Cart"}>Terminar compra</Link>
                     </div>
                 </div>

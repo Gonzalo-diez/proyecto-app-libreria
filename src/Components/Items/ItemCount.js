@@ -5,7 +5,6 @@ import { useState } from "react";
 
 function ItemCount({stock = 20, initial = 0, onAdd, producto}) {
     const [contador, setContador] = useState(initial)
-    const [agregar, setAgregar] = useState()
 
     const aumentarContador = () => {
         setContador(contador + 1);
@@ -26,8 +25,14 @@ function ItemCount({stock = 20, initial = 0, onAdd, producto}) {
     }
 
     const agregarCarrito = () => {
-        setAgregar(agregar)
-        console.log("se ha agregado " + contador + " productos de la " + producto + " al carrito")
+        if(contador > 0){
+            onAdd(contador)
+        } 
+        else {
+            return(
+                console.log("No se agrego ningún producto")
+            )
+        }
     } 
 
         return(

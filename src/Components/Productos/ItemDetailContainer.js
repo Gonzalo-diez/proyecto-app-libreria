@@ -8,10 +8,11 @@ import { useParams } from "react-router-dom";
 const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState({})
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     const { id } = useParams()
 
     useEffect(() => {
+        setLoading(true)
         const promesa = new Promise((res,rej)=>{
             setTimeout(()=>{
                 res(Items) 
@@ -25,11 +26,12 @@ const ItemDetailContainer = () => {
         .catch((error)=>{
             console.log(error)
         })
-    },[])
+    },[id])
+
 
     return (
         <div>
-            {loading ? <div className="carga"></div> : <ItemDetail producto={producto}/>}
+            {loading ? <div className="carga"></div> : <ItemDetail  producto={producto}  />}
         </div>
     )
 }
