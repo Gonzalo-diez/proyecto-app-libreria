@@ -8,13 +8,13 @@ import { CartContext } from "../Carrito/CartContext";
 
 function CartWidget() {
 
-    const { cantidad_total } = useContext(CartContext)
+    const { productCounter } = useContext(CartContext)
     //Iconos para el menu de la app
     return (
         <div className="icons">
             <FontAwesomeIcon icon={faHeart} />
             <Link to={"/Cart"}>
-                <button><FontAwesomeIcon icon={faShoppingCart} />{cantidad_total}</button>
+                <button><FontAwesomeIcon icon={faShoppingCart} />{productCounter()}</button>
             </Link>
             <FontAwesomeIcon icon={faUser} />
         </div>
