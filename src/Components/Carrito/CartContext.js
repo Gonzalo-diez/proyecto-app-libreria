@@ -20,6 +20,7 @@ const CartProvider = ({ children }) => {
             console.log(`Agregaste el mismo producto al carrito, cantidad: ${cantidad}.`);
             const actualizar = carrito.findIndex(elemento => elemento.item.id === producto.id)
             carrito[actualizar].cantidad = carrito[actualizar].cantidad + cantidad
+            setCarrito([...carrito])
         } else {
             console.log(`Agregaste ${producto.title}, cantidad: ${cantidad}.`);
             const newObj = {

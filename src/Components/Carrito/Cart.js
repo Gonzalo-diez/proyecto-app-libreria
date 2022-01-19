@@ -5,7 +5,7 @@ import CartItem from "./CartItem"
 
 const Cart = () => {
 
-    const { carrito, eliminarProducto, limpiarCarrito } = useContext(CartContext)
+    const { carrito, eliminarProducto, limpiarCarrito} = useContext(CartContext)
 
     if(carrito.length === 0) {
         return(

@@ -44,7 +44,7 @@ function Generos() {
                             <img src={elemento.image} alt={elemento.title} />
                         </div>
                         <div className="content">
-                            <Link to={`/Category/${elemento.genero}`}>{elemento.title}</Link>
+                            <Link to={`/Category/${elemento.genero}`} className="btnDetail">{elemento.title}</Link>
                         </div>
                     </div>
                 )

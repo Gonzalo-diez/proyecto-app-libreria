@@ -129,15 +129,19 @@ header .navbar a:hover {
     font-size: 20px;
 }
 
-/*Elementos del Carrito que me falta desarrollar*/
-
+/*Elementos del Carrito*/
 .cartBox {
-    background: var(--blanco);
-    display: flex;
+    text-align: center;
 }
 
-.cartBox .cartImage {
-    height: 2rem;
+.cartBtn {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cartBtn button {
+    background-color: var(--blanco);
+    color: var(--negro);
 }
 
 /*Sección de ayuda*/
@@ -191,6 +195,11 @@ header .navbar a:hover {
 .botones{
     display: flex;
     justify-content: space-evenly;
+}
+
+.botones button {
+    background-color: var(--blanco);
+    color: var(--negro);
 }
 
 .cartIcon {
