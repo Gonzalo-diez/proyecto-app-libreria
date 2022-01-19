@@ -17,15 +17,17 @@ const CartProvider = ({ children }) => {
     
     const agregarProducto = (producto,cantidad) => { 
         if (isInCart(producto.id)) {
-            console.log('ya está el producto en el carrito.'); 
-          } else {
+            console.log(`Agregaste el mismo producto al carrito, cantidad: ${cantidad}.`);
+            const actualizar = carrito.findIndex(elemento => elemento.item.id === producto.id)
+            carrito[actualizar].cantidad = carrito[actualizar].cantidad + cantidad
+        } else {
             console.log(`Agregaste ${producto.title}, cantidad: ${cantidad}.`);
             const newObj = {
               item: producto,
               cantidad
             }
             setCarrito([...carrito, newObj])
-          }
+        }
     } 
     
     const eliminarProducto = (id) => { 
@@ -38,7 +40,7 @@ const CartProvider = ({ children }) => {
      }
 
     const isInCart = (id) => {
-        return carrito.find(elemento => elemento.item.id == id)
+        return carrito.some(elemento => elemento.item.id == id)
     }
     
     const productCounter = () => {

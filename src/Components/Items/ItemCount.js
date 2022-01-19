@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-function ItemCount({stock = 20, initial = 0, onAdd, producto}) {
+function ItemCount({stock = 20, initial = 0, onAdd}) {
     const [contador, setContador] = useState(initial)
 
     const aumentarContador = () => {

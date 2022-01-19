@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Items } from "../Items/items.json"
+import { Link } from "react-router-dom"
 
 function GenerosList() {
     //Uso del useState y useEffect para la promesa
@@ -38,6 +39,7 @@ function GenerosList() {
                             <img src={elemento.image} alt={elemento.title} />
                             <h1>{elemento.title}</h1>
                             <h2>{elemento.author}</h2>
+                            <Link to={`/item/${elemento.id}`} className="btnDetail">Ver más del producto</Link>
                         </div>
                     </div>
                 )
