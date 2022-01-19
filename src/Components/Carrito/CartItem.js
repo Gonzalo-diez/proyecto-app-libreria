@@ -1,12 +1,13 @@
 import React from "react";
 
-const CartItem = ({ producto, eliminarProducto, limpiarCarrito, comprarProduct }) => {
+const CartItem = ({ producto, eliminarProducto, limpiarCarrito }) => {
+
     return (
         <>
             <div className="cartBox">
                 <h2>Producto: {producto.item.title}</h2>
                 <p>Cantidad: {producto.cantidad}</p>
-                <p>Precio: {producto.item.price}</p>
+                <p>Precio: {producto.item.price} x {producto.cantidad}</p>
                 <div className="cartBtn">
                     <button onClick={() => eliminarProducto(producto.item.id)}> Quitar </button>
                     <button>Comprar</button>
