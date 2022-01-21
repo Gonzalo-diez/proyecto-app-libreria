@@ -15,7 +15,7 @@ const ItemListContainer = () => {
     
     useEffect(() => {
         if(id){
-            const coleccionItems= collection(db,"Items")
+            const coleccionItems = collection(db,"Items")
             const filtro1 = where("title","==",id)
             const filtro2 = where("price",">",0)
             const consulta = query(coleccionItems,filtro1,filtro2)

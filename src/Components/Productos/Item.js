@@ -20,7 +20,7 @@ function Item({producto}) {
                                     <img src={image} alt={title} />
                                     <div className="content">
                                         <h3>{title}</h3>
-                                        <div className="precio">{price} <span>$18500.00</span></div>
+                                        <div className="precio">${price} <span>$18500.00</span></div>
                                         <div className="stars">
                                             <FontAwesomeIcon icon={faStar} />
                                             <FontAwesomeIcon icon={faStar} />

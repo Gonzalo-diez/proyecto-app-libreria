@@ -7,9 +7,9 @@ import GenerosList from "../Generos/GenerosList"
 import ItemDetailContainer from '../Productos/ItemDetailContainer';
 import Error from "../Complementario/Error";
 import Cart from "../Carrito/Cart"
+import CartProvider from "../Carrito/CartContext"
 import "../CSS/App.css"
 import { Route, Routes } from 'react-router-dom';
-import CartProvider from "../Carrito/CartContext"
 
 function App() {
   //La app con las rutas/Routes y los path que son usados en la app

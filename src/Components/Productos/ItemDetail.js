@@ -25,7 +25,7 @@ function ItemDetail({ producto }) {
                     <h3>Autor/a: {author}</h3>
                     <img src={image} alt={title} />
                     <p>Resumen: {detail}</p>
-                    <h4>Precio: {price}</h4>
+                    <h4>Precio: ${price}</h4>
                     <div>
                         <ItemCount producto={title} onAdd={test} />
                         <Link to={"/Cart"}>Terminar compra</Link>
