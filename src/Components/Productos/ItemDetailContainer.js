@@ -1,6 +1,7 @@
 import React from "react";
 import ItemDetail from "./ItemDetail"
-import { Items } from "../Items/items.json"
+import { db } from "../Nucleo/Firebase"
+import { collection, getDoc , doc } from "firebase/firestore"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom";
 
@@ -13,15 +14,14 @@ const ItemDetailContainer = ({onAdd}) => {
     const test = onAdd
 
     useEffect(() => {
-        setLoading(true)
-        const promesa = new Promise((res,rej)=>{
-            setTimeout(()=>{
-                res(Items) 
-            },2000)
-        }) 
-        
-        promesa.then((res)=>{
-            setProducto(res.find(i => i.id == id))
+        const coleccionItems = collection(db,"Items")
+        const docRef = doc(coleccionItems,id)
+        const pedido = getDoc(docRef)
+
+        pedido
+        .then((resultado)=>{
+            const producto = resultado.data()
+            setProducto(producto)
             setLoading(false)
         })
         .catch((error)=>{

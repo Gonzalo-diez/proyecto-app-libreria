@@ -11,8 +11,6 @@ const { Provider } = CartContext
 
 const CartProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([])
-    const [precio_total, setPrecio_total] = useState(0)
-    const [cantidad_total, setCantidad_total] = useState(0)
 
     
     const agregarProducto = (producto,cantidad) => { 
@@ -48,14 +46,22 @@ const CartProvider = ({ children }) => {
         return carrito.reduce((accum, item) => accum = accum + item.cantidad, 0)
     }
     
+    const totalCart = () => {
+        return (
+            carrito
+            .reduce((a, b) => a + b)
+            .map(elemento => elemento.item.price)
+          )
+    }
+
+
     const value = { 
-        carrito, 
-        precio_total, 
-        cantidad_total , 
+        carrito,  
         agregarProducto ,
         eliminarProducto , 
         limpiarCarrito ,
-        productCounter
+        productCounter ,
+        totalCart
     }
 
     return (

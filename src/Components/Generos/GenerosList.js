@@ -1,7 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Items } from "../Items/items.json"
+import { db } from "../Nucleo/Firebase"
+import { collection , getDocs , query , where } from "firebase/firestore"
 import { Link } from "react-router-dom"
 
 function GenerosList() {
@@ -11,16 +12,31 @@ function GenerosList() {
     const { genero } = useParams()
 
     useEffect(() => {
-        const promesa = new Promise((res, rej) => {
-            setTimeout(() => {
-                res(Items)
-            }, 2000)
-        })
-        promesa.then((x) => {
-            //Filtro del según el genero del libro
-            setGenero(x.filter(i => i.genero == genero))
-            setLoading(false)
-        })
+        if(genero){
+            const coleccionItems = collection(db,"Items")
+            const filtro1 = where("genero","==",genero)
+            const consulta = query(coleccionItems,filtro1)
+            const pedido = getDocs(consulta)
+            pedido
+                .then((resultado)=>{
+                    setGenero(resultado.docs.map(doc=>({id : doc.id,...doc.data()})))
+                    setLoading(false) 
+                })
+                .catch((error)=>{
+                    console.log(error)
+                })
+        }else {
+            const coleccionItems = collection(db,"Items")
+            const pedido = getDocs(coleccionItems)
+            pedido
+                .then((resultado)=>{
+                    setGenero(resultado.docs.map(doc=>({id : doc.id,...doc.data()})))
+                    setLoading(false) 
+                })
+                .catch((error)=>{
+                    console.log(error)
+                })
+        }
     }, [genero])
 
     if(loading) {
