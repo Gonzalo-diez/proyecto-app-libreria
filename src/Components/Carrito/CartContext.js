@@ -11,9 +11,8 @@ const { Provider } = CartContext
 
 const CartProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([])
-
-    
-    const agregarProducto = (producto,cantidad) => { 
+  
+    const agregarProducto = (producto, cantidad, price) => { 
         if (isInCart(producto.id)) {
             console.log(`Agregaste el mismo producto al carrito, cantidad: ${cantidad}.`);
             const actualizar = carrito.findIndex(elemento => elemento.item.id === producto.id)
@@ -45,23 +44,13 @@ const CartProvider = ({ children }) => {
     const productCounter = () => {
         return carrito.reduce((accum, item) => accum = accum + item.cantidad, 0)
     }
-    
-    const totalCart = () => {
-        return (
-            carrito
-            .reduce((a, b) => a + b)
-            .map(elemento => elemento.item.price)
-          )
-    }
-
 
     const value = { 
         carrito,  
         agregarProducto ,
         eliminarProducto , 
         limpiarCarrito ,
-        productCounter ,
-        totalCart
+        productCounter 
     }
 
     return (

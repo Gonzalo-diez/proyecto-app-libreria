@@ -1,33 +1,46 @@
 import React from "react";
 import { useEffect, useState } from "react"
+import { db } from "../Nucleo/Firebase"
+import { collection , getDocs , query , where } from "firebase/firestore"
+import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import "../CSS/App.css"
 
 
 //Array de items sobre los generos de libros
-const items = [
-    {id: 1, title: "Policiaco", image: "./genero-policiaco.jpg", genero: "Policiaco"},
-    {id: 2, title: "Romance", image: "./genero-romance.jpg", genero: "Romance"},
-    {id: 3, title: "Ciencia Ficción", image: "./genero-ficcion.jpg", genero: "Ciencia Ficción"},
-    {id: 4, title: "Fantasia", image: "./genero-fantasia.jpg", genero: "Fantasia"}
-]
 
 function Generos() {
     const [genero, setGenero] = useState([])
     const [loading, setLoading] = useState(true)
+    const { generos } = useParams()
     
     useEffect(() => {
-        //promesa para cargar los items en respuesta, pero que debe de esperar 2 segundos
-        const promesa = new Promise((res, rej) => {
-            setTimeout(() => {
-                res(items)
-            }, 2000)
-        })
-        promesa.then((genero) => {
-            setLoading(false)
-            setGenero(genero)
-        })
-    }, [])
+        if(generos){
+            const coleccionItems = collection(db,"listaGeneros")
+            const filtro1 = where("title","==",genero)
+            const consulta = query(coleccionItems,filtro1)
+            const pedido = getDocs(consulta)
+            pedido
+                .then((resultado)=>{
+                    setGenero(resultado.docs.map(doc=>({id : doc.id,...doc.data()})))
+                    setLoading(false) 
+                })
+                .catch((error)=>{
+                    console.log(error)
+                })
+        }else {
+            const coleccionItems = collection(db,"listaGeneros")
+            const pedido = getDocs(coleccionItems)
+            pedido
+                .then((resultado)=>{
+                    setGenero(resultado.docs.map(doc=>({id : doc.id,...doc.data()})))
+                    setLoading(false) 
+                })
+                .catch((error)=>{
+                    console.log(error)
+                })
+        }
+    }, [generos])
 
     if(loading) {
         return (
