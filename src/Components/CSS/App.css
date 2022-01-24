@@ -143,6 +143,12 @@ header .navbar a:hover {
     text-align: center;
 }
 
+.cartBox span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .cartBtn {
     display: flex;
     justify-content: space-around;
@@ -189,7 +195,7 @@ header .navbar a:hover {
     width: 25%;
 }
 
-.descripciones p {
+.descripciones span {
     font-size: 15px;
 }
 

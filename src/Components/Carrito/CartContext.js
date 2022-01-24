@@ -38,7 +38,7 @@ const CartProvider = ({ children }) => {
      }
 
     const isInCart = (id) => {
-        return carrito.some(elemento => elemento.item.id == id)
+        return carrito.some(elemento => elemento.item.id === id)
     }
     
     const productCounter = () => {

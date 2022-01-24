@@ -17,7 +17,7 @@ const Cart = () => {
     }
     else {
         return (
-            carrito.map((producto) => <CartItem key={producto.item.id} producto={producto} eliminarProducto={eliminarProducto} limpiarCarrito={limpiarCarrito} total={total} />)
+            carrito.map((producto) => <CartItem key={producto.item.id} producto={producto} eliminarProducto={eliminarProducto} limpiarCarrito={limpiarCarrito} total={total} carrito={carrito} />)
         )
     }
 }

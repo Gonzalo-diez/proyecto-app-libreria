@@ -24,7 +24,8 @@ function ItemDetail({ producto }) {
                     <h2>Libro: {title}</h2>
                     <h3>Autor/a: {author}</h3>
                     <img src={image} alt={title} />
-                    <p>Resumen: {detail}</p>
+                    <br />
+                    <span>Resumen: {detail}</span>
                     <h4>Precio: ${price}</h4>
                     <div>
                         <ItemCount producto={title} onAdd={test} />
@@ -39,7 +40,8 @@ function ItemDetail({ producto }) {
                     <h2>Libro: {title}</h2>
                     <h3>Autor/a: {author}</h3>
                     <img src={image} alt={title} />
-                    <p>Resumen: {detail}</p>
+                    <br />
+                    <span>Resumen: {detail}</span>
                     <div>
                         <Link to={"/Cart"}>Terminar compra</Link>
                     </div>

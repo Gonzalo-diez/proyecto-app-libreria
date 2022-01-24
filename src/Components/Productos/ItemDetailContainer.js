@@ -21,7 +21,7 @@ const ItemDetailContainer = ({onAdd}) => {
         pedido
         .then((resultado)=>{
             const producto = resultado.data()
-            setProducto(producto)
+            setProducto({...producto, id})
             setLoading(false)
         })
         .catch((error)=>{
