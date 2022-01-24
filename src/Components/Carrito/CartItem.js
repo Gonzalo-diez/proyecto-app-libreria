@@ -20,7 +20,7 @@ const CartItem = ({ producto, eliminarProducto, limpiarCarrito, total, carrito }
             total: total
         }
     
-        console.log(orden)
+        console.log("Orden creada : " + orden)
     }
     
     
