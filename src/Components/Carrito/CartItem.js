@@ -1,13 +1,13 @@
 import React from "react";
 import { db } from "../Nucleo/Firebase"
-import { addDoc, doc, setDoc, updateDoc } from "firebase/firestore";
+import { doc, setDoc, updateDoc } from "firebase/firestore";
 import { useState } from "react";
 
 const CartItem = ({ producto, eliminarProducto, limpiarCarrito, total, carrito }) => {
     const [orden, setOrden] = useState(true)
 
     const productoComprado = () => {
-        alert("Se ha comprado " + producto.cantidad + " " + producto.item.title + " Precio total: " + total())
+        alert("Orden creada: " + Math.random() + " " + producto.cantidad + " " + producto.item.title + " Precio total: " + total())
     }
 
     const crearOrden = () => {
