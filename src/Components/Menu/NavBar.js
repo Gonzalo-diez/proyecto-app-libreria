@@ -1,10 +1,15 @@
 import React from "react";
 import "../CSS/App.css"
-import CartWidget from "./CartWidget";
+import { useContext } from "react"
+import { CartContext } from "../Carrito/CartContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart, faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom"
 
 
 function Menu() {
+    
+    const { productCounter } = useContext(CartContext)
     //Menu con los Links con sus respectivas rutas o Routes que hay en App.js y los iconos de CartWidget.js
     return (
         <header>
@@ -17,7 +22,13 @@ function Menu() {
             <Link to="/Category">Generos</Link>
         </nav>
 
-        <CartWidget />
+        <div className="icons">
+            <FontAwesomeIcon icon={faHeart} />
+            <Link to={"/Cart"}>
+                <button><FontAwesomeIcon icon={faShoppingCart} />{productCounter() > 0 && <p>{productCounter()}</p>}</button>
+            </Link>
+            <FontAwesomeIcon icon={faUser} />
+        </div>
 
 
     </header>

@@ -1,44 +1,47 @@
 import React from "react";
 import { db } from "../Nucleo/Firebase"
-import { doc, setDoc } from "firebase/firestore";
+import { addDoc, doc, setDoc, updateDoc } from "firebase/firestore";
+import { useState } from "react";
 
 const CartItem = ({ producto, eliminarProducto, limpiarCarrito, total, carrito }) => {
+    const [orden, setOrden] = useState(true)
+
+    const productoComprado = () => {
+        alert("Se ha comprado " + producto.cantidad + " " + producto.item.title + " Precio total: " + total())
+    }
 
     const crearOrden = () => {
-
-        const usuarios = {
-            name: "Gonzalo",
+        const user = doc(db, "ordenes", "Primera")
+        setDoc(user, {
+            id: Math.random(),
+            nombre: "Gonzalo",
             email: "example@gmail.com",
-            tel: 4191198
-        }
-
-        const prueba = setDoc(doc(db, "ordenes", "Primera"), usuarios)
-
-        const orden = {
-            comprador: usuarios,
-            items: carrito,
-            total: total
-        }
-    
-        console.log("Orden creada : " + orden)
+            tel: 168165181561
+        })
+        updateDoc(user, {
+            "carrito": carrito
+        })
+        setOrden(false)
+        productoComprado()
+        eliminarProducto(producto.item.id)
     }
     
     
-    return (
-        <>
-            <div className="cartBox">
-                <h2>Producto: {producto.item.title}</h2>
-                <span>Cantidad: {producto.cantidad}</span>
-                <span>Precio: ${producto.item.price} x {producto.cantidad}</span>
-                <span>Total: {total() > 0 && <p>${total()}</p>}</span>
-                <div className="cartBtn">
-                    <button onClick={() => eliminarProducto(producto.item.id)}> Quitar </button>
-                    <button onClick={crearOrden}>confirmar compra</button>
-                    <button onClick={() => limpiarCarrito()}>Borrar todos los items</button>
+        return (
+            <>
+                <div className="cartBox">
+                    <h2>Producto: {producto.item.title}</h2>
+                    <span>Cantidad: {producto.cantidad}</span>
+                    <span>Precio: ${producto.item.price} x {producto.cantidad}</span>
+                    <span>Total: {total() > 0 && <p>${total()}</p>}</span>
+                    <div className="cartBtn">
+                        <button onClick={() => eliminarProducto(producto.item.id)}> Quitar </button>
+                        <button onClick={crearOrden}>confirmar compra</button>
+                        <button onClick={() => limpiarCarrito()}>Borrar todos los items</button>
+                    </div>
                 </div>
-            </div>
-        </>
-    )
+            </>
+        )
 }
 
 export default CartItem
