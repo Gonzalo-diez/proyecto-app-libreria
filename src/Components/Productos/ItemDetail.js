@@ -29,7 +29,6 @@ function ItemDetail({ producto }) {
                     <h4>Precio: ${price}</h4>
                     <div>
                         <ItemCount producto={title} onAdd={test} />
-                        <Link to={"/Cart"}>Terminar compra</Link>
                     </div>
                 </div>
             )

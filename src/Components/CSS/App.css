@@ -42,18 +42,18 @@ header .logo {
     color: var(--negro);
 }
 
-header .navbar a {
+header .navbar a{
     font-size: 1.7rem;
     color: var(--negro);
     margin: 0 1rem;
 }
 
-header .navbar a:hover {
-    color: var(--celeste);
-}
-
 .icons button{
     background: var(--blanco);
+}
+
+.icons a {
+    color: var(--negro);
 }
 
 /*Sección de destacados*/
@@ -155,6 +155,15 @@ header .navbar a:hover {
 }
 
 .cartBtn button {
+    background-color: inherit;
+    color: var(--negro);
+}
+
+.btn-compra {
+    text-align: center;
+}
+
+.btn-compra button {
     background-color: inherit;
     color: var(--negro);
 }
@@ -261,6 +270,203 @@ header .navbar a:hover {
 
 .listBox .boxGenre img {
     width: 50%;
+}
+
+/*Sección Sign Up*/
+.sign-box {
+    width: 300px;
+    padding: 30px;
+    margin-top: 22rem;
+    margin-left: 42rem;
+    transform: translate(-50%, -50%);
+    background: inherit;
+    text-align: center;
+}
+
+.sign-box h2 {
+    color: var(--negro);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.sign-box input{
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid var(--negro);
+    padding: 14px 10px;
+    width: 220px;
+    outline: none;
+    color: var(--negro);
+    border-radius: 24px;
+    transition: 0.25px;
+}
+
+.sign-box input::placeholder {
+    color: var(--negro);
+}
+
+.sign-box input:focus {
+    width: 270px;
+    border-color: var(--naranja);
+}
+
+.sign-box a {
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid var(--naranja);
+    padding: 14px 10px;
+    outline: none;
+    color: var(--naranja);
+    border-radius: 24px;
+    transition: 0.25px;
+    cursor: pointer;
+}
+
+.sign-box a:hover {
+    background: var(--naranja);
+    color: var(--blanco);
+}
+
+.btn-inicio1 {
+    margin-top: -22rem;
+    text-align: center;
+}
+
+/*Sección de inicio de cuenta*/
+.log-box {
+    width: 300px;
+    padding: 30px;
+    margin-top: 12rem;
+    margin-left: 42rem;
+    transform: translate(-50%, -50%);
+    background: inherit;
+    text-align: center;
+}
+
+.log-box h2 {
+    color: var(--negro);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.log-box input{
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid var(--negro);
+    padding: 14px 10px;
+    width: 220px;
+    outline: none;
+    color: var(--negro);
+    border-radius: 24px;
+    transition: 0.25px;
+}
+
+.log-box input::placeholder {
+    color: var(--negro);
+}
+
+.log-box input:focus {
+    width: 270px;
+    border-color: var(--naranja);
+}
+
+.log-box a {
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid var(--naranja);
+    padding: 14px 10px;
+    outline: none;
+    color: var(--naranja);
+    border-radius: 24px;
+    transition: 0.25px;
+    cursor: pointer;
+}
+
+.log-box a:hover {
+    background: var(--naranja);
+    color: var(--blanco);
+}
+
+.btn-inicio {
+    margin-top: -10rem;
+    text-align: center;
+}
+
+/*Sección contraseña olvidada*/
+.reset-box {
+    width: 300px;
+    padding: 30px;
+    margin-top: 12rem;
+    margin-left: 42rem;
+    transform: translate(-50%, -50%);
+    background: inherit;
+    text-align: center;
+}
+
+.reset-box h1 {
+    color: var(--negro);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.reset-box input {
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid var(--negro);
+    padding: 14px 10px;
+    width: 220px;
+    outline: none;
+    color: var(--negro);
+    border-radius: 24px;
+    transition: 0.25px;
+}
+
+.reset-box input::placeholder {
+    color: var(--negro);
+}
+
+.reset-box input:focus {
+    width: 270px;
+    border-color: var(--naranja);
+}
+
+.reset-box button {
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid var(--naranja);
+    padding: 14px 10px;
+    outline: none;
+    color: var(--naranja);
+    border-radius: 24px;
+    transition: 0.25px;
+    cursor: pointer;
+}
+
+.reset-box button:hover {
+    background: var(--naranja);
+    color: var(--blanco);
+}
+
+.btn-inicio2 {
+    margin-top: -10rem;
+    text-align: center;
+}
+
+/*Sección usuario*/
+.user-text {
+    text-align: center;
 }
 
 /*Pie de página*/
