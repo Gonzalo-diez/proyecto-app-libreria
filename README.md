@@ -12,6 +12,7 @@ Tecnologías usadas:
 -React
 -Node
 -Firebase
+-Stripe
 
 Redes: 
 Git Hub: https://github.com/Gonzalo-diez

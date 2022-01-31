@@ -17,9 +17,9 @@ export default function ForgotPassword() {
         setError("")
         setLoading(true)
         await resetPassword(emailRef.current.value)
-        setMessage("Check your inbox for further instructions")
+        setMessage("Se le ha enviado un E-mail, revise su correo")
       } catch {
-        setError("Failed to reset password")
+        setError("Fallo en enviar E-mail")
       }
   
       setLoading(false)
@@ -30,6 +30,7 @@ export default function ForgotPassword() {
                 <h1>Reset de contraseña</h1>
                 {error && <span>{error}</span>}
                 {message && <span>{message}</span>}
+                <br />
                 <label>E-mail</label>
                 <input type="email" ref={emailRef} placeholder="Ingrese su E-mail" required />
                 <div className="btn-crear">

@@ -36,6 +36,8 @@ function SignUp() {
                 <input type="text" name="nombre" placeholder="Ingrese su nombre" required />
                 <label>Apellido</label>
                 <input type="text" name="apellido" placeholder="Ingrese su apellido" required />
+                <label>Nombre de usuario</label>
+                <input type="text" name="userName" placeholder="Ingrese nombre de usuario" required />
                 <label>E-mail</label>
                 <input type="email" name="email" ref={emailRef} placeholder="Ingrese su E-mail" required />
                 <label>Contraseña</label>
@@ -43,7 +45,7 @@ function SignUp() {
                 <label>Confirmar contraseña</label>
                 <input type="password" name="contraseña" ref={passwordConfirmRef} placeholder="Confirmar contraseña" required />
                 <div className="btn-crear">
-                    <button disabled={loading}><Link to={"/User"} disabled={loading}>Crear cuenta</Link></button>
+                    <button disabled={loading}><Link to={"/User"}>Crear cuenta</Link></button>
                 </div>
             </form>
             <div className="btn-inicio1">
