@@ -43,7 +43,7 @@ const Cart = () => {
             <>
                 {carrito.map((producto) => <CartItem key={producto.item.id} producto={producto} eliminarProducto={eliminarProducto} limpiarCarrito={limpiarCarrito} total={total} carrito={carrito} /> )}
                 <div className="btn-compra">
-                    <button onClick={crearOrden}>Confirmar compra</button>
+                    <Link to={"/Checkout"} onClick={crearOrden}>Confirmar compra</Link>
                 </div>
             </>
         )

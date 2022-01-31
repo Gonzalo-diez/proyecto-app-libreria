@@ -7,6 +7,7 @@ import GenerosList from "../Generos/GenerosList"
 import ItemDetailContainer from '../Productos/ItemDetailContainer';
 import Error from "../Complementario/Error";
 import Cart from "../Carrito/Cart"
+import CheckOut from "../Carrito/CheckOut"
 import SignUp from "../User/SignUp"
 import Login from "../User/Login"
 import User from "../User/User"
@@ -30,6 +31,7 @@ function App() {
               <Route path="/Category/:genero" element={<GenerosList />} />
               <Route path="/item/:id" element={<ItemDetailContainer />} />
               <Route path="/Cart" element={<Cart />} />
+              <Route path= "/Checkout" element={<CheckOut />} />
               <Route path="/SignUp" element={<SignUp />} />
               <Route path="/Login" element={<Login />} />
               <Route path="/User" element={<User />} />
