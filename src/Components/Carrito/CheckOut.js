@@ -43,6 +43,7 @@ const CheckoutForm = ({ crearOrden }) => {
   
     return (
       <form className="checkout-box" onSubmit={handleSubmit}>
+        <h4>Ingrese los datos requeridos para realizar la orden: </h4>
         {/* User Card Input */}
         <div className="form-group">
           <label>Tarjeta: </label>
@@ -58,6 +59,9 @@ const CheckoutForm = ({ crearOrden }) => {
           <br />
           <label>Ciudad: </label>
           <input type="text" placeholder="Ingrese su ciudad" />
+          <br />
+          <label>Calle: </label>
+          <input type="text" placeholder="Ingrese la calle" />
           <br />
           <label>Código postal: </label>
           <input type="text" placeholder="Ingrese su código postal" />

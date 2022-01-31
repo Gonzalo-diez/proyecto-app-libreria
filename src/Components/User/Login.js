@@ -19,7 +19,7 @@ async function handleSubmit(e) {
         await login(emailRef.current.value, passwordRef.current.value)
         navigate.push("/")
     } catch {
-        setError("Failed to log in")
+        setError("Fallo en iniciar sesión")
     }
   
     setLoading(false)
@@ -34,7 +34,7 @@ async function handleSubmit(e) {
                 <label>Contraseña</label>
                 <input type="password" ref={passwordRef} placeholder="Ingrese su contraseña" required />
                 <div className="btn-crear">
-                    <Link to={"/User"} disabled={loading}>Iniciar Sesión</Link>
+                    <button disabled={loading}><Link to={"/User"} disabled={loading}>Iniciar sesión</Link></button>
                 </div>
             </form>
             <div className="btn-inicio">

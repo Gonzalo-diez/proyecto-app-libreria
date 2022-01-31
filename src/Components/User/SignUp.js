@@ -43,7 +43,7 @@ function SignUp() {
                 <label>Confirmar contraseña</label>
                 <input type="password" name="contraseña" ref={passwordConfirmRef} placeholder="Confirmar contraseña" required />
                 <div className="btn-crear">
-                    <Link to={"/User"} disabled={loading}>Crear Cuenta</Link>
+                    <button disabled={loading}><Link to={"/User"} disabled={loading}>Crear cuenta</Link></button>
                 </div>
             </form>
             <div className="btn-inicio1">
