@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { db } from "../Nucleo/Firebase"
 import { addDoc, collection, Timestamp } from "firebase/firestore";
 import CartItem from "./CartItem"
+import CheckOut from "./CheckOut";
 
 const Cart = () => {
 
@@ -43,7 +44,7 @@ const Cart = () => {
             <>
                 {carrito.map((producto) => <CartItem key={producto.item.id} producto={producto} eliminarProducto={eliminarProducto} limpiarCarrito={limpiarCarrito} total={total} carrito={carrito} /> )}
                 <div className="btn-compra">
-                    <Link to={"/Checkout"} onClick={crearOrden}>Confirmar compra</Link>
+                    <CheckOut crearOrden={crearOrden} />
                 </div>
             </>
         )

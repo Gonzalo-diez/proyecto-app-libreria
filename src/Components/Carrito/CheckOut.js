@@ -4,15 +4,11 @@ import {Elements, CardElement, useStripe, useElements,} from "@stripe/react-stri
 
 const stripePromise = loadStripe("pk_test_51KNlfVF8sQ075GSPu0mkusoOFSyaeqb6VakIz0c2FdzGUqGHnLhciNtlQKa0E4G8g0V1RplvqJld4MxaksoZBGTi005PLxAjQ7")
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ crearOrden }) => {
     const stripe = useStripe();
     const elements = useElements();
   
     const [loading, setLoading] = useState(false);
-
-    const compra = () => {
-        alert("Su compra ha sido realizada")
-    }
   
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -31,7 +27,6 @@ const CheckoutForm = () => {
             "http://localhost:3001/api/checkout",
             {
               id,
-              amount: 10000, //cents
             }
           );
           console.log(data);
@@ -50,10 +45,25 @@ const CheckoutForm = () => {
       <form className="checkout-box" onSubmit={handleSubmit}>
         {/* User Card Input */}
         <div className="form-group">
+          <label>Tarjeta: </label>
           <CardElement />
+          <label>E-mail:</label>
+          <input type="email" placeholder="Ingrese su E-mail" />
+          <br />
+          <label>Teléfono: </label>
+          <input type="tel" placeholder="Ingrese su teléfono" />
+          <br />
+          <label>Provincia: </label>
+          <input type="text" placeholder="Ingrese su Provincia"/>
+          <br />
+          <label>Ciudad: </label>
+          <input type="text" placeholder="Ingrese su ciudad" />
+          <br />
+          <label>Código postal: </label>
+          <input type="text" placeholder="Ingrese su código postal" />
         </div>
   
-        <button disabled={!stripe} onClick={compra} className="btn btn-success">
+        <button disabled={!stripe} onClick={crearOrden} className="btn btn-success">
           {loading ? (
             <div className="spinner-border text-light" role="status">
               <span className="sr-only">Loading...</span>

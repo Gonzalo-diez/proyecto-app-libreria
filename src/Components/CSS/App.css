@@ -168,6 +168,16 @@ header .navbar a{
     color: var(--negro);
 }
 
+.checkout-box .form-group {
+    height: 70px;
+    margin: 5rem 30rem;
+    align-items: center;
+}
+
+.checkout-box .form-group input {
+    background: inherit;
+}
+
 /*Sección de ayuda*/
 
 .ayuda {
