@@ -518,3 +518,87 @@ header .navbar a{
 footer {
     text-align: center;
 }
+
+
+/*Diseño para moviles*/ 
+@media (max-width: 320px) {
+    header {
+        width: 100%;
+    }
+
+    header .logo {
+        font-size: .2rem;
+    }
+
+    header .navbar a{
+        font-size: .2rem;
+    }
+
+    header .icons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    header .icons button {
+        font-size: .2rem;
+    }
+
+    header .icons a {
+        font-size: .2rem;
+    }
+}
+
+@media (max-width: 375px) {
+    header {
+        width: 100%;
+    }
+
+    header .logo {
+        font-size: .5rem;
+    }
+
+    header .navbar a{
+        font-size: .5rem;
+    }
+
+    header .icons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    header .icons button {
+        font-size: .5rem;
+    }
+
+    header .icons a {
+        font-size: .5rem;
+    }
+}
+
+@media (max-width: 425px) {
+    header {
+        width: 100%;
+    }
+
+    header .logo {
+        font-size: 1rem;
+    }
+
+    header .navbar a{
+        font-size: 1rem;
+    }
+
+    header .icons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    header .icons button {
+        font-size: .5rem;
+    }
+
+    header .icons a {
+        font-size: .5rem;
+    }
+
+}

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faEye, faShare, faStar} from '@fortawesome/free-solid-svg-icons'
+import { faHeart, faEye, faStar} from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom"
 import { db } from "../Nucleo/Firebase"
 import { collection, addDoc } from "firebase/firestore";
@@ -16,11 +16,15 @@ function Item({producto}) {
         pedido
         .then((res) => {
             setLike(res.id)
-            alert("Agregado a la lista de deseados " + producto.title)
+            console.log("Agregado a la lista de deseados " + producto.title)
         })
         .catch((error) => {
             console.error(error)
         })
+    }
+
+    const gusta = () => {
+        console.log("Le ha dado me gusta a " + producto.title)
     }
 
     return (
@@ -30,8 +34,7 @@ function Item({producto}) {
                             <div className="box-container">
                                 <div className="box">
                                     <div className="icons">
-                                        <FontAwesomeIcon icon={faHeart} />
-                                        <FontAwesomeIcon icon={faShare} />
+                                        <FontAwesomeIcon icon={faHeart} onClick={gusta} />
                                         <FontAwesomeIcon icon={faEye} onClick={crearLista} />
                                     </div>
                                     <img src={image} alt={title} />

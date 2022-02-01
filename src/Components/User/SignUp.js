@@ -22,7 +22,7 @@ function SignUp() {
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
         } catch {
-            setError("Fallo en crear la cuenta")
+            setError("Procesando en el sistema...")
         }
         setLoading(false)
     }
@@ -31,7 +31,7 @@ function SignUp() {
         <div className="sign-box-conntainer">
             <form className="sign-box" onSubmit={handleSubmit}>
                 <h2>Crear cuenta</h2>
-                {error && <p>{error}</p>}
+                {error && <span>{error}</span>}
                 <label>Nombre</label>
                 <input type="text" name="nombre" placeholder="Ingrese su nombre" required />
                 <label>Apellido</label>

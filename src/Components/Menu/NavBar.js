@@ -14,26 +14,26 @@ function Menu() {
     return (
         <header>
 
-        <Link to="/" className="logo">La libreria</Link>
+            <Link to="/" className="logo">La libreria</Link>
 
-        <nav className="navbar">
-            <Link to="/">Inicio</Link>
-            <Link to="/Ayuda">Ayuda</Link>
-            <Link to="/Category">Generos</Link>
-        </nav>
+            <nav className="navbar">
+                <Link to="/">Inicio</Link>
+                <Link to="/Ayuda">Ayuda</Link>
+                <Link to="/Category">Generos</Link>
+            </nav>
 
-        <div className="icons">
-            <FontAwesomeIcon icon={faHeart} />
-            <Link to={"/Cart"}>
-                <button><FontAwesomeIcon icon={faShoppingCart} />{productCounter() > 0 && <p>{productCounter()}</p>}</button>
-            </Link>
-            <Link to={"/SignUp"}>
-                <FontAwesomeIcon icon={faUser} />
-            </Link>
-        </div>
+            <div className="icons">
+                <button><FontAwesomeIcon icon={faHeart} /></button>
+                <Link to={"/Cart"}>
+                    <button><FontAwesomeIcon icon={faShoppingCart} />{productCounter() > 0 && <p>{productCounter()}</p>}</button>
+                </Link>
+                <Link to={"/SignUp"}>
+                    <button><FontAwesomeIcon icon={faUser} /></button>
+                </Link>
+            </div>
 
 
-    </header>
+        </header>
     )
 }
 
