@@ -10,6 +10,8 @@ const AuthContext = React.createContext({
   onAuthStateChanged
 })
 
+const { Provider } = AuthContext
+
 export function useAuth() {
   return useContext(AuthContext)
 }
@@ -62,8 +64,8 @@ const value = {
 }
 
 return (
-    <AuthContext.Provider value={value}>
+    <Provider value={value}>
       {!loading && children}
-    </AuthContext.Provider>
+    </Provider>
   )
 }

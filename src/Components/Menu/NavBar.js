@@ -27,7 +27,7 @@ function Menu() {
                 <Link to={"/Cart"}>
                     <button><FontAwesomeIcon icon={faShoppingCart} />{productCounter() > 0 && <p>{productCounter()}</p>}</button>
                 </Link>
-                <Link to={"/SignUp"}>
+                <Link to={"/Login"}>
                     <button><FontAwesomeIcon icon={faUser} /></button>
                 </Link>
             </div>

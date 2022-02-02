@@ -1,26 +1,14 @@
-import React, { useState } from "react"
+import React, { useContext } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEye, faStar} from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom"
-import { db } from "../Nucleo/Firebase"
-import { collection, addDoc } from "firebase/firestore";
+import { FavouriteContext } from "../User/FavouriteContext"
 
 function Item({producto}) {
     const {title, image, price, id} = producto
-    const [like, setLike] = useState()
-    const crearLista = () => {
-        const docRef = addDoc(collection(db, "listaDeseados"), {
-            producto: producto
-        })
-        const pedido = docRef
-        pedido
-        .then((res) => {
-            setLike(res.id)
-            console.log("Agregado a la lista de deseados " + producto.title)
-        })
-        .catch((error) => {
-            console.error(error)
-        })
+    const { agregarLista } = useContext(FavouriteContext)
+    const test = () => {
+        agregarLista(producto)
     }
 
     const gusta = () => {
@@ -35,7 +23,7 @@ function Item({producto}) {
                                 <div className="box">
                                     <div className="icons">
                                         <FontAwesomeIcon icon={faHeart} onClick={gusta} />
-                                        <FontAwesomeIcon icon={faEye} onClick={crearLista} />
+                                        <FontAwesomeIcon icon={faEye} onClick={test} />
                                     </div>
                                     <img src={image} alt={title} />
                                     <div className="content">
