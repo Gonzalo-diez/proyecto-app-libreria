@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "./AuthContext"
 
 function SignUp() {
@@ -9,6 +9,7 @@ function SignUp() {
     const { signup } = useAuth()
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
+    const navigate = useNavigate()
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -20,9 +21,9 @@ function SignUp() {
         try {
             setError("")
             setLoading(true)
-            await signup(emailRef.current.value, passwordRef.current.value)
+            signup(emailRef.current.value, passwordRef.current.value)
         } catch {
-            setError("Procesando en el sistema...")
+            setError("Procesando...")
         }
         setLoading(false)
     }
@@ -45,7 +46,7 @@ function SignUp() {
                 <label>Confirmar contraseña</label>
                 <input type="password" name="contraseña" ref={passwordConfirmRef} placeholder="Confirmar contraseña" required />
                 <div className="btn-crear">
-                    <button disabled={loading}><Link to={"/User"}>Crear cuenta</Link></button>
+                    <button disabled={loading} onClick={navigate(!loading ? "/User" : "/SignUp")}>Crear cuenta</button>
                 </div>
             </form>
             <div className="btn-inicio1">

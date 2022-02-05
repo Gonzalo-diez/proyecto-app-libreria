@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail"
 import { db } from "../Nucleo/Firebase"
 import { collection, getDoc , doc } from "firebase/firestore"
-import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom";
 
 

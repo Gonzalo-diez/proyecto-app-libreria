@@ -1,13 +1,15 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Auth } from "../Nucleo/Firebase";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged } from "firebase/auth"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, signOut } from "firebase/auth"
 
 const AuthContext = React.createContext({
   currentUser: null,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  sendPasswordResetEmail,
-  onAuthStateChanged
+  signup: () => Promise,
+  login: () => Promise,
+  resetPassword: () => Promise,
+  updateEmail: () => Promise,
+  updatePassword: () => Promise,
+  logout: () => Promise
 })
 
 const { Provider } = AuthContext
@@ -20,32 +22,32 @@ export default function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState()
   const [loading, setLoading] = useState(true)
 
-function signup(email, password) {
-    return Auth.createUserWithEmailAndPassword(email, password)
+const signup = async (email, password) => {
+    return createUserWithEmailAndPassword(Auth, email, password)
 }
 
-function login(email, password) {
-    return Auth.signInWithEmailAndPassword(email, password)
+const login = async (email, password) => {
+    return signInWithEmailAndPassword(Auth, email, password)
 }
 
-function logout() {
-    return Auth.signOut()
+const logout = async () => {
+    return signOut(Auth)
 }
 
-function resetPassword(email) {
-    return Auth.sendPasswordResetEmail(email)
+const resetPassword = async (email, password) => {
+    return sendPasswordResetEmail(Auth, email, password)
 }
 
-function updateEmail(email) {
+const updateEmail = async (email) => {
     return currentUser.updateEmail(email)
 }
 
-function updatePassword(password) {
+const updatePassword = async (password) => {
     return currentUser.updatePassword(password)
 }
 
 useEffect(() => {
-    const unsubscribe = Auth.onAuthStateChanged(user => {
+    const unsubscribe = onAuthStateChanged(Auth, user => {
       setCurrentUser(user)
       setLoading(false)
     })

@@ -39,7 +39,7 @@ const CheckoutForm = ({ crearOrden }) => {
       }
     };
   
-    console.log(!stripe || loading);
+    
   
     return (
       <form className="checkout-box" onSubmit={handleSubmit}>

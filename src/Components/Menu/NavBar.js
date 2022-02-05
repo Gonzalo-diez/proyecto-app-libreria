@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../CSS/App.css"
-import { useContext } from "react"
 import { CartContext } from "../Carrito/CartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart, faHeart, faUser } from '@fortawesome/free-solid-svg-icons';

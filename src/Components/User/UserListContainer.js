@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import React,{ useContext, useState } from "react"
 import { FavouriteContext } from "./FavouriteContext"
 import { Link } from "react-router-dom"
 import { db } from "../Nucleo/Firebase"
@@ -6,13 +6,12 @@ import { addDoc, collection, Timestamp } from "firebase/firestore";
 import User from "./User";
 
 
-const UserContainer = () => {
+const UserListContainer = () => {
 
     const [lista, setLista] = useState()
     const { like, eliminarProducto, limpiarLista } = useContext(FavouriteContext)
     const crearLista = () => {
         const docRef = addDoc(collection(db, "Lista"), {
-            tel: 49819814,
             producto: like,
             date: Timestamp.fromDate(new Date())
         })
@@ -39,13 +38,14 @@ const UserContainer = () => {
     else {
         return (
             <>
-                {like.map((producto) => <User key={producto.item.id} producto={producto} eliminarProducto={eliminarProducto} limpiarLista={limpiarLista} like={like} /> )}
+                {like.map((producto) => <User key={producto.item.id} eliminarProducto={eliminarProducto} like={like} /> )}
                 <div>
                     <button onClick={limpiarLista}>Borar lista</button>
+                    <button onClick={crearLista}>Guardar lista</button>
                 </div>
             </>
         )
     }
 }
 
-export default UserContainer
+export default UserListContainer
