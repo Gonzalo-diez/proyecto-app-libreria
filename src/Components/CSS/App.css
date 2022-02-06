@@ -521,17 +521,17 @@ footer {
 
 
 /*Diseño para moviles*/ 
-@media (max-width: 320px) {
+@media (max-width: 768px) {
     header {
         width: 100%;
     }
 
     header .logo {
-        font-size: .2rem;
+        font-size: .9rem;
     }
 
     header .navbar a{
-        font-size: .2rem;
+        font-size: .9rem;
     }
 
     header .icons {
@@ -540,38 +540,86 @@ footer {
     }
 
     header .icons button {
-        font-size: .2rem;
+        font-size: .9rem;
     }
 
     header .icons a {
-        font-size: .2rem;
-    }
-}
-
-@media (max-width: 375px) {
-    header {
-        width: 100%;
+        font-size: .9rem;
     }
 
-    header .logo {
-        font-size: .5rem;
+    .carga {
+        top: 0.2rem;
+        left: 21rem;
+        position: relative;
+        width: 100px;
+        height: 100px;
     }
 
-    header .navbar a{
-        font-size: .5rem;
+    .descripciones {
+        margin-top: 1.5rem;
+        text-align: center;
     }
 
-    header .icons {
+    .descripciones span {
+        font-size: 12px;
         display: flex;
-        flex-direction: row;
+        flex-wrap: wrap;
     }
 
-    header .icons button {
-        font-size: .5rem;
+    .checkout-box .form-group {
+        border: .1rem solid var(--negro);
+        border-radius: 1rem;
+        margin: 0rem;
+        align-items: center;
     }
 
-    header .icons a {
-        font-size: .5rem;
+    .ayuda {
+        border: .1rem solid rgba(0, 0, 0, 1);
+        border-radius: .1rem;
+        width: 30rem;
+        margin: 2rem;
+        padding: 0.5rem;
+    }
+
+    .btnAyuda {
+        display: flex;
+        justify-content: space-around;
+        margin-right: 30rem;
+    }
+    
+    .btnAyuda  button{
+        margin-left: 30rem;
+        display: flex;
+    }
+
+    .log-box {
+        width: 300px;
+        padding: 30px;
+        margin-top: 12rem;
+        margin-left: 25rem;
+        transform: translate(-50%, -50%);
+        background: inherit;
+        text-align: center;
+    }
+
+    .sign-box {
+        width: 300px;
+        padding: 30px;
+        margin-top: 27rem;
+        margin-left: 25rem;
+        transform: translate(-50%, -50%);
+        background: inherit;
+        text-align: center;
+    }
+
+    .reset-box {
+        width: 300px;
+        padding: 30px;
+        margin-top: 12rem;
+        margin-left: 25rem;
+        transform: translate(-50%, -50%);
+        background: inherit;
+        text-align: center;
     }
 }
 
@@ -581,11 +629,144 @@ footer {
     }
 
     header .logo {
-        font-size: 1rem;
+        font-size: .8rem;
     }
 
     header .navbar a{
+        font-size: .8rem;
+    }
+
+    header .icons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    header .icons button {
+        font-size: .6rem;
+    }
+
+    header .icons a {
+        font-size: .6rem;
+    }
+
+    .products .box-container {
+        width: 100%;
+    }
+
+    .products .box-container .box .content {
+        font-size: .7rem;
+    }
+    
+    .products .box-container .box .content .precio span {
+        color: var(--negro);
+        font-size: .7rem;
+        text-decoration: line-through;
+    }
+    
+    .products .box-container .box img {
+        height: 20rem;
+        width: 45%;
+        filter: drop-shadow(0 .5rem 1rem rgba(0, 0, 0, 1));
+        margin: 8rem 2rem;
+    }
+
+    .products .box-container .box .btnDetail {
+        background-color: var(--blanco);
+        color: var(--negro);
+        font-size: .8rem;
+    }
+
+    .descripciones h2 {
         font-size: 1rem;
+    }
+
+    .descripciones h3 {
+        font-size: .9rem;
+    }
+
+    .descripciones span {
+        font-size: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card .shopCount {
+        font-size: .5rem;
+    }
+
+    .botones button {
+        background-color: inherit;
+        color: var(--negro);
+        font-size: .8rem;
+    }
+    
+    .cartIcon {
+        display: flex;
+        justify-content: center;
+        font-size: .7rem;
+    }
+
+    .ayuda {
+        border: .1rem solid rgba(0, 0, 0, 1);
+        border-radius: .1rem;
+        width: 20rem;
+        margin: 2rem;
+        padding: 0.5rem;
+    }
+
+    .btnAyuda {
+        display: flex;
+        justify-content: space-around;
+        margin-right: 10rem;
+    }
+    
+    .btnAyuda  button{
+        margin-left: 10rem;
+        display: flex;
+    }
+
+    .log-box {
+        width: 300px;
+        padding: 30px;
+        margin-top: 12rem;
+        margin-left: 15rem;
+        transform: translate(-50%, -50%);
+        background: inherit;
+        text-align: center;
+    }
+
+    .sign-box {
+        width: 300px;
+        padding: 30px;
+        margin-top: 27rem;
+        margin-left: 15rem;
+        transform: translate(-50%, -50%);
+        background: inherit;
+        text-align: center;
+    }
+
+    .reset-box {
+        width: 300px;
+        padding: 30px;
+        margin-top: 12rem;
+        margin-left: 15rem;
+        transform: translate(-50%, -50%);
+        background: inherit;
+        text-align: center;
+    }
+}
+
+@media (max-width: 375px) {
+    header {
+        width: 100%;
+    }
+
+    header .logo {
+        font-size: .7rem;
+    }
+
+    header .navbar a{
+        font-size: .7rem;
     }
 
     header .icons {
@@ -601,4 +782,35 @@ footer {
         font-size: .5rem;
     }
 
+    .products .box-container {
+        width: 100%;
+    }
+
+    .products .box-container .box .content {
+        font-size: .6rem;
+    }
+    
+    .products .box-container .box .content .precio span {
+        color: var(--negro);
+        font-size: .7rem;
+        text-decoration: line-through;
+    }
+    
+    .products .box-container .box img {
+        height: 20rem;
+        width: 45%;
+        filter: drop-shadow(0 .5rem 1rem rgba(0, 0, 0, 1));
+        margin: 8rem 2rem;
+    }
+
+    .products .box-container .box .btnDetail {
+        background-color: var(--blanco);
+        color: var(--negro);
+        font-size: .6rem;
+    }
+
+}
+
+@media (max-width: 320px) {
+    
 }

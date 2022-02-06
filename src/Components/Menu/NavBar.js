@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 
 
 function Menu() {
-    
+
     const { productCounter } = useContext(CartContext)
     //Menu con los Links con sus respectivas rutas o Routes que hay en App.js y los iconos de CartWidget.js
     return (
@@ -30,7 +30,6 @@ function Menu() {
                     <button><FontAwesomeIcon icon={faUser} /></button>
                 </Link>
             </div>
-
 
         </header>
     )

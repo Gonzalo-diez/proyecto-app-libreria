@@ -37,7 +37,7 @@ async function handleSubmit(e) {
                 </div>
             </form>
             <div className="btn-inicio">
-                <span>Se olvido su contraseña?</span> <Link to={"/ForgotPassword"}>Resetear conntraseña</Link>
+                <span>Se olvido su contraseña?</span> <Link to={"/ForgotPassword"}>Resetear contraseña</Link>
                 <br />
                 <span>No tiene cuenta?</span> <Link to="/SignUp">Registrese</Link>
             </div>
