@@ -28,7 +28,6 @@ const Cart = () => {
         .catch((error) => {
             console.error(error)
         })
-        limpiarCarrito()
     }
 
     if(carrito.length === 0) {
@@ -45,9 +44,10 @@ const Cart = () => {
                 {carrito.map((producto) => <CartItem key={producto.item.id} producto={producto} eliminarProducto={eliminarProducto} limpiarCarrito={limpiarCarrito} total={total} carrito={carrito} /> )}
                 <div className="cartBtn">
                     <button onClick={() => limpiarCarrito()}>Borrar todos los items</button>
+                    <button onClick={() => crearOrden()}>Realizar Pedido</button>
                 </div>
                 <div className="btn-compra">
-                    <CheckOut crearOrden={crearOrden} />
+                    <CheckOut limpiarCarrito={limpiarCarrito} />
                 </div>
             </>
         )

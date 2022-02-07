@@ -4,7 +4,7 @@ import {Elements, CardElement, useStripe, useElements,} from "@stripe/react-stri
 
 const stripePromise = loadStripe("pk_test_51KNlfVF8sQ075GSPu0mkusoOFSyaeqb6VakIz0c2FdzGUqGHnLhciNtlQKa0E4G8g0V1RplvqJld4MxaksoZBGTi005PLxAjQ7")
 
-const CheckoutForm = ({ crearOrden }) => {
+const CheckoutForm = ({limpiarCarrito}) => {
     const stripe = useStripe();
     const elements = useElements();
   
@@ -35,9 +35,7 @@ const CheckoutForm = ({ crearOrden }) => {
         setLoading(false);
       }
     };
-  
-    
-  
+
     return (
       <form className="checkout-box" onSubmit={handleSubmit}>
         <h4>Ingrese los datos requeridos para realizar la orden: </h4>
@@ -64,7 +62,7 @@ const CheckoutForm = ({ crearOrden }) => {
           <input type="text" placeholder="Ingrese su código postal" />
         </div>
   
-        <button disabled={!stripe} onClick={crearOrden} className="btn btn-success">
+        <button disabled={!stripe} onClick={() => limpiarCarrito()} className="btn btn-success">
           {loading ? (
             <div className="spinner-border text-light" role="status">
               <span className="sr-only">Loading...</span>
