@@ -649,6 +649,14 @@ footer {
         font-size: .6rem;
     }
 
+    .carga {
+        top: 0.2rem;
+        left: 10rem;
+        position: relative;
+        width: 100px;
+        height: 100px;
+    }
+
     .products .box-container {
         width: 100%;
     }
@@ -786,6 +794,14 @@ footer {
         font-size: .5rem;
     }
 
+    .carga {
+        top: 0.2rem;
+        left: 9.5rem;
+        position: relative;
+        width: 100px;
+        height: 100px;
+    }
+
     .products .box-container {
         width: 100%;
     }
@@ -874,6 +890,14 @@ footer {
 
     header .icons a {
         font-size: .5rem;
+    }
+
+    .carga {
+        top: 0.2rem;
+        left: 7rem;
+        position: relative;
+        width: 100px;
+        height: 100px;
     }
 
     .products .box-container {

@@ -23,12 +23,9 @@ const CheckoutForm = ({ crearOrden }) => {
         // console.log(paymentMethod)
         const { id } = paymentMethod;
         try {
-          const { data } = await JSON.post(
-            "http://localhost:3001/api/checkout",
-            {
-              id,
-            }
-          );
+          const { data } = await JSON({
+            id
+          });
           console.log(data);
   
           elements.getElement(CardElement).clear();
