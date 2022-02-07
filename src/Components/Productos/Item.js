@@ -1,18 +1,15 @@
-import React, { useContext } from "react"
+import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEye, faStar} from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom"
-import { FavouriteContext } from "../User/FavouriteContext"
 
 function Item({producto}) {
     const {title, image, price, id} = producto
-    const { agregarLista } = useContext(FavouriteContext)
-    const test = () => {
-        agregarLista(producto)
-    }
-
     const gusta = () => {
         console.log("Le ha dado me gusta a " + producto.title)
+    }
+    const deseado = () => {
+        console.log(producto.title + " se ha agregado a la lista de productos deseados")
     }
 
     return (
@@ -23,7 +20,7 @@ function Item({producto}) {
                                 <div className="box">
                                     <div className="icons">
                                         <FontAwesomeIcon icon={faHeart} onClick={gusta} />
-                                        <FontAwesomeIcon icon={faEye} onClick={test} />
+                                        <FontAwesomeIcon icon={faEye} onClick={deseado} />
                                     </div>
                                     <img src={image} alt={title} />
                                     <div className="content">
