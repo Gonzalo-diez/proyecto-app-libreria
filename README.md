@@ -22,7 +22,9 @@ Tecnologías usadas:
 
 Gif/Imagenes: 
 
-![image]()
+<p align="center">
+     <img src="./Proyecto.gif" alt="Gif del proyecto" />
+</p>
 
 Redes: 
 Git Hub: https://github.com/Gonzalo-diez
