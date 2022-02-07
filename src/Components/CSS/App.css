@@ -706,6 +706,10 @@ footer {
         font-size: .7rem;
     }
 
+    .ayudaBox{
+        font-size: .5rem;
+    }
+
     .ayuda {
         border: .1rem solid rgba(0, 0, 0, 1);
         border-radius: .1rem;
@@ -809,8 +813,105 @@ footer {
         font-size: .6rem;
     }
 
+    .ayudaBox{
+        font-size: .4rem;
+    }
+
+    .ayuda {
+        border: .1rem solid rgba(0, 0, 0, 1);
+        border-radius: .1rem;
+        width: 15rem;
+        margin: 2rem;
+        padding: 0.5rem;
+    }
+
+    .btnAyuda {
+        display: flex;
+        justify-content: space-around;
+        margin-right: 10rem;
+    }
+    
+    .btnAyuda  button {
+        margin-left: 10rem;
+        display: flex;
+    }
+
+    .listBox {
+        margin-top: 1.5rem;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .listBox .boxGenre {
+        text-align: center;
+        background: inherit;
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 320px) {
+    header {
+        width: 100%;
+    }
+
+    header .logo {
+        font-size: .7rem;
+    }
+
+    header .navbar a{
+        font-size: .7rem;
+    }
+
+    header .icons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    header .icons button {
+        font-size: .5rem;
+    }
+
+    header .icons a {
+        font-size: .5rem;
+    }
+
+    .products .box-container {
+        width: 100%;
+    }
+
+    .products .box-container .box {
+        border: .1rem solid rgba(0, 0, 0, 1);
+        border-radius: .1rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: var(--blanco);
+        flex: 1 1 30rem;
+    }
+
+    .products .box-container .box .content {
+        font-size: .6rem;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
     
+    .products .box-container .box .content .precio span {
+        color: var(--negro);
+        font-size: .7rem;
+        text-decoration: line-through;
+    }
+    
+    .products .box-container .box img {
+        height: 20rem;
+        width: 45%;
+        filter: drop-shadow(0 .5rem 1rem rgba(0, 0, 0, 1));
+        margin: 8rem 2rem;
+    }
+
+    .products .box-container .box .btnDetail {
+        background-color: var(--blanco);
+        color: var(--negro);
+        font-size: .8rem;
+    }
 }

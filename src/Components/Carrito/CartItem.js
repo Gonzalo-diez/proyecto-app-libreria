@@ -1,6 +1,6 @@
 import React from "react";
 
-const CartItem = ({ producto, eliminarProducto, limpiarCarrito, total }) => {
+const CartItem = ({ producto, eliminarProducto, total }) => {
         return (
             <>
                 <div className="cartBox">
@@ -10,7 +10,6 @@ const CartItem = ({ producto, eliminarProducto, limpiarCarrito, total }) => {
                     <span>Total: {total() > 0 &&  <p>${total()}</p>}</span>
                     <div className="cartBtn">
                         <button onClick={() => eliminarProducto(producto.item.id)}> Quitar </button>
-                        <button onClick={() => limpiarCarrito()}>Borrar todos los items</button>
                     </div>
                 </div>
             </>

@@ -43,6 +43,9 @@ const Cart = () => {
         return (
             <>
                 {carrito.map((producto) => <CartItem key={producto.item.id} producto={producto} eliminarProducto={eliminarProducto} limpiarCarrito={limpiarCarrito} total={total} carrito={carrito} /> )}
+                <div className="cartBtn">
+                    <button onClick={() => limpiarCarrito()}>Borrar todos los items</button>
+                </div>
                 <div className="btn-compra">
                     <CheckOut crearOrden={crearOrden} />
                 </div>
