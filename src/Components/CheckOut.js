@@ -38,7 +38,7 @@ const CheckoutForm = ({limpiarCarrito}) => {
 
     return (
       <form className="checkout-box" onSubmit={handleSubmit}>
-        <h4>Ingrese los datos requeridos para realizar la orden: </h4>
+        <h4>Ingrese los datos requeridos para terminar la compra: </h4>
         {/* User Card Input */}
         <div className="form-group">
           <label>Tarjeta: </label>
