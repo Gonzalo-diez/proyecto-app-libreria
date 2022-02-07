@@ -1,5 +1,5 @@
 import React from "react";
-import "../CSS/App.css"
+import "./CSS/App.css"
 
 function Footer() {
     //Pie de página con los derechos de autor

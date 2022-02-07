@@ -1,9 +1,6 @@
 import React from "react";
-import "../CSS/App.css"
 import ItemListContainer from "./ItemListContainer";
-
-
-
+import "./CSS/App.css"
 
 function Main() {
     //Retorno del intermediario ItemListCOntainer, para que se reproduzca la lista de destacodos

@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Auth } from "../Nucleo/Firebase";
+import { Auth } from "../Firebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, signOut } from "firebase/auth"
 
 const AuthContext = React.createContext({

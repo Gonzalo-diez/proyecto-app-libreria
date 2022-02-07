@@ -1,10 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react"
-import { db } from "../Nucleo/Firebase"
+import { db } from "./Firebase"
 import { collection , getDocs , query , where } from "firebase/firestore"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
-import "../CSS/App.css"
+import "./CSS/App.css"
 
 
 //Array de items sobre los generos de libros

@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
-import { CartContext } from "./CartContext"
+import { CartContext } from "./Context/CartContext"
 import { Link } from "react-router-dom"
-import { db } from "../Nucleo/Firebase"
+import { db } from "./Firebase"
 import { addDoc, collection, Timestamp } from "firebase/firestore";
 import CartItem from "./CartItem"
 import CheckOut from "./CheckOut";

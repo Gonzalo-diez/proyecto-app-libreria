@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
-import ItemCount from "../Items/ItemCount";
+import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
-import "../CSS/App.css"
-import { CartContext } from "../Carrito/CartContext";
+import { CartContext } from "./Context/CartContext";
+import "./CSS/App.css"
 
 
 function ItemDetail({ producto }) {

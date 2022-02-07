@@ -1,6 +1,6 @@
 import React from "react";
 import Item from "./Item"
-import "../CSS/App.css"
+import "./CSS/App.css"
 
 
 const ItemList = ({productos}) => {

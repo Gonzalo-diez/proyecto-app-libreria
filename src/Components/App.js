@@ -1,21 +1,21 @@
-import NavBar from "../Menu/NavBar"
-import Main from "../Productos/Main"
-import Footer from "../Menu/Footer"
-import Ayuda from "../Complementario/Ayuda"
-import Generos from "../Generos/Generos"
-import GenerosList from "../Generos/GenerosList"
-import ItemDetailContainer from '../Productos/ItemDetailContainer';
-import Error from "../Complementario/Error";
-import Cart from "../Carrito/Cart"
-import CheckOut from "../Carrito/CheckOut"
-import SignUp from "../User/SignUp"
-import Login from "../User/Login"
-import User from "../User/User"
-import ForgotPassword from "../User/ForgotPassword"
-import CartProvider from "../Carrito/CartContext"
-import AuthProvider from "../User/AuthContext"
-import "../CSS/App.css"
+import NavBar from "./NavBar"
+import Main from "./Main"
+import Footer from "./Footer"
+import Ayuda from "./Ayuda"
+import Generos from "./Generos"
+import GenerosList from "./GenerosList"
+import ItemDetailContainer from './ItemDetailContainer';
+import Error from "./Error";
+import Cart from "./Cart"
+import CheckOut from "./CheckOut"
+import SignUp from "./SignUp"
+import Login from "./Login"
+import User from "./User"
+import ForgotPassword from "./ForgotPassword"
+import CartProvider from "./Context/CartContext"
+import AuthProvider from "./Context/AuthContext"
 import { Route, Routes } from 'react-router-dom';
+import "./CSS/App.css"
 
 function App() {
   //La app con las rutas/Routes y los path que son usados en la app
