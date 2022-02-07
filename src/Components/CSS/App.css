@@ -657,6 +657,11 @@ footer {
         height: 100px;
     }
 
+    .products {
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+
     .products .box-container {
         width: 100%;
     }
@@ -802,6 +807,11 @@ footer {
         height: 100px;
     }
 
+    .products {
+        margin-left: -2rem;
+        margin-right: 2rem;
+    }
+
     .products .box-container {
         width: 100%;
     }
@@ -864,6 +874,10 @@ footer {
         background: inherit;
         font-size: 15px;
     }
+
+    .box-container .box {
+        margin-right: -5rem;
+    }
 }
 
 @media (max-width: 320px) {
@@ -898,6 +912,11 @@ footer {
         position: relative;
         width: 100px;
         height: 100px;
+    }
+
+    .products {
+        margin-left: -7rem;
+        margin-right: 2rem;
     }
 
     .products .box-container {
@@ -937,5 +956,10 @@ footer {
         background-color: var(--blanco);
         color: var(--negro);
         font-size: .8rem;
+    }
+
+    .box-container .box {
+        margin-right: -5rem;
+        margin-left: 4rem;
     }
 }
