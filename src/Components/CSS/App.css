@@ -48,12 +48,24 @@ header .navbar a{
     margin: 0 1rem;
 }
 
+header .navbar a:hover {
+    color: var(--celeste);
+}
+
 .icons button{
     background: var(--blanco);
 }
 
+.icons button:hover {
+    color: var(--celeste);
+}
+
 .icons a {
     color: var(--negro);
+}
+
+.icons a:hover {
+    color: var(--celeste);
 }
 
 /*Sección de destacados*/
@@ -520,7 +532,54 @@ footer {
 }
 
 
-/*Diseño para moviles*/ 
+/*Diseño para notebooks*/
+@media (max-width: 1024px) {
+    .checkout-box .form-group {
+        border: .1rem solid var(--negro);
+        border-radius: 30px;
+        margin: 1rem 20rem;
+        align-items: center;
+    }
+
+    .carga {
+        top: 0.2rem;
+        left: 30rem;
+        position: relative;
+        width: 100px;
+        height: 100px;
+    }
+
+    .log-box {
+        width: 300px;
+        padding: 30px;
+        margin-top: 12rem;
+        margin-left: 32rem;
+        transform: translate(-50%, -50%);
+        background: inherit;
+        text-align: center;
+    }
+
+    .sign-box {
+        width: 300px;
+        padding: 30px;
+        margin-top: 25rem;
+        margin-left: 32rem;
+        transform: translate(-50%, -50%);
+        background: inherit;
+        text-align: center; 
+    }
+
+    .reset-box {
+        width: 300px;
+        padding: 30px;
+        margin-top: 12rem;
+        margin-left: 32rem;
+        transform: translate(-50%, -50%);
+        background: inherit;
+        text-align: center;
+    }
+}
+/*Diseño para tablets y moviles*/ 
 @media (max-width: 768px) {
     header {
         width: 100%;
