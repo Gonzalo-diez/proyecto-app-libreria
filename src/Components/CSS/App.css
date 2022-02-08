@@ -625,7 +625,7 @@ footer {
 
 @media (max-width: 425px) {
     header {
-        width: 100%;
+        width: 105%;
     }
 
     header .logo {
