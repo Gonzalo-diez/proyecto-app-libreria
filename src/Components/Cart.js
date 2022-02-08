@@ -1,13 +1,13 @@
 import { useContext, useState } from "react"
 import { CartContext } from "./Context/CartContext"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { db } from "./Firebase"
 import { addDoc, collection, Timestamp } from "firebase/firestore";
 import CartItem from "./CartItem"
-import CheckOut from "./CheckOut";
 
 const Cart = () => {
 
+    const navigate = useNavigate()
     const [orden, setOrden] = useState()
     const { carrito, eliminarProducto, limpiarCarrito, total } = useContext(CartContext)
     const crearOrden = () => {
@@ -44,10 +44,7 @@ const Cart = () => {
                 {carrito.map((producto) => <CartItem key={producto.item.id} producto={producto} eliminarProducto={eliminarProducto} limpiarCarrito={limpiarCarrito} total={total} carrito={carrito} /> )}
                 <div className="cartBtn">
                     <button onClick={() => limpiarCarrito()}>Borrar todos los items</button>
-                    {!orden ? <button onClick={() => crearOrden()}>Realizar Pedido</button> : <span>Pedido Realizado</span>}
-                </div>
-                <div className="btn-compra">
-                    <CheckOut limpiarCarrito={limpiarCarrito} />
+                    {!orden ? <button onClick={() => crearOrden()}>Realizar Pedido</button> : navigate("/Checkout")}
                 </div>
             </>
         )

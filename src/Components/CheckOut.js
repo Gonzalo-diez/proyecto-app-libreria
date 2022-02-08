@@ -37,41 +37,43 @@ const CheckoutForm = ({limpiarCarrito}) => {
     };
 
     return (
-      <form className="checkout-box" onSubmit={handleSubmit}>
-        <h4>Ingrese los datos requeridos para terminar la compra: </h4>
-        {/* User Card Input */}
-        <div className="form-group">
-          <label>Tarjeta: </label>
-          <CardElement />
-          <label>E-mail:</label>
-          <input type="email" placeholder="Ingrese su E-mail" />
-          <br />
-          <label>Teléfono: </label>
-          <input type="tel" placeholder="Ingrese su teléfono" />
-          <br />
-          <label>Provincia: </label>
-          <input type="text" placeholder="Ingrese su Provincia"/>
-          <br />
-          <label>Ciudad: </label>
-          <input type="text" placeholder="Ingrese su ciudad" />
-          <br />
-          <label>Calle: </label>
-          <input type="text" placeholder="Ingrese la calle" />
-          <br />
-          <label>Código postal: </label>
-          <input type="text" placeholder="Ingrese su código postal" />
-        </div>
-  
-        <button disabled={!stripe} onClick={() => limpiarCarrito()} className="btn btn-success">
-          {loading ? (
-            <div className="spinner-border text-light" role="status">
-              <span className="sr-only">Loading...</span>
-            </div>
-          ) : (
-            "Realizar compra"
-          )}
-        </button>
-      </form>
+      <div className="btn-compra">
+        <form className="checkout-box" onSubmit={handleSubmit}>
+          <h4>Ingrese los datos requeridos para terminar la compra: </h4>
+          {/* User Card Input */}
+          <div className="form-group">
+            <label>Tarjeta: </label>
+            <CardElement />
+            <label>E-mail:</label>
+            <input type="email" placeholder="Ingrese su E-mail" />
+            <br />
+            <label>Teléfono: </label>
+            <input type="tel" placeholder="Ingrese su teléfono" />
+            <br />
+            <label>Provincia: </label>
+            <input type="text" placeholder="Ingrese su Provincia"/>
+            <br />
+            <label>Ciudad: </label>
+            <input type="text" placeholder="Ingrese su ciudad" />
+            <br />
+            <label>Calle: </label>
+            <input type="text" placeholder="Ingrese la calle" />
+            <br />
+            <label>Código postal: </label>
+            <input type="text" placeholder="Ingrese su código postal" />
+          </div>
+    
+          <button disabled={!stripe} onClick={() => limpiarCarrito()} className="btn btn-success">
+            {loading ? (
+              <div className="spinner-border text-light" role="status">
+                <span className="sr-only">Loading...</span>
+              </div>
+            ) : (
+              "Realizar compra"
+            )}
+          </button>
+        </form>
+      </div>
     );
   };
 
