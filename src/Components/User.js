@@ -1,5 +1,6 @@
 import React from "react"
 
+//Función que retorna la página del usuario
 function User() {
     return (
         <div className="user-box">

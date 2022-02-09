@@ -6,7 +6,7 @@ import { collection , getDocs , query , where } from "firebase/firestore"
 import { Link } from "react-router-dom"
 
 function GenerosList() {
-    //Uso del useState y useEffect para la promesa
+    //Uso del useState para setear los valores de la función y carga y useEffect para mapear los productos según su genero en el firebase 
     const [myGenero, setGenero] = useState([])
     const [loading, setLoading] = useState(true)
     const { genero } = useParams()
@@ -46,7 +46,7 @@ function GenerosList() {
         )
     }
     else {
-        //Retorno de la función con los libros fitrados por genero
+        //Retorno de la función con los libros filtrados por genero que el usuario selecciono
         return(
             myGenero.map((elemento, indice) => {
                 return(

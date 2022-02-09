@@ -7,8 +7,7 @@ import "./CSS/App.css"
 
 function ItemDetail({ producto }) {
     //Función para renderizar los detalles de los productos, usando useEffect y UseState
-    //Utilizando {id} en useParams como parametro para el id de los items de items.json
-    //Promesa para renderizar los detalles después de 2 segundos de ser seleccionados
+    //Utilizando {id} en useParams como parametro para el id de la colección "Items" del firebase
     const { title, price, detail, image, author } = producto
     const [mostrar, setMostrar] = useState(true)
     const { agregarProducto } = useContext(CartContext)
@@ -16,8 +15,8 @@ function ItemDetail({ producto }) {
         setMostrar(false)
         agregarProducto(producto, contador)
     }
-    
         //Estructura del los detalles
+        //Con condicional if para que el usuario pueda utilizar el contador de productos ("ItemCount") y cuando el mismo haga click en el icono de carrito, se genere el condicional else
         if(mostrar) {
             return (
                 <div className="descripciones">

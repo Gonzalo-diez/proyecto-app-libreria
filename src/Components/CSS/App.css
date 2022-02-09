@@ -151,6 +151,18 @@ header .navbar a:hover {
 }
 
 /*Elementos del Carrito*/
+.cart-vacio {
+    text-align: center;
+}
+
+.cart-vacio a {
+    color: var(--negro);
+}
+
+.cart-vacio a:hover {
+    color: var(--celeste);
+}
+
 .cartBox {
     text-align: center;
 }

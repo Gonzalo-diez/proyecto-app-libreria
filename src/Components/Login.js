@@ -3,6 +3,8 @@ import { useAuth } from "./Context/AuthContext";
 import { Link, useNavigate } from "react-router-dom"
 
 export default function Login() {
+    //Función de para logear el usuario
+    //Uso del useRef para referenciar en la función y useState para setear los valores de la función y la carga
     const emailRef = useRef()
     const passwordRef = useRef()
     const { login } = useAuth()
@@ -10,19 +12,21 @@ export default function Login() {
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
   
-async function handleSubmit(e) {
-    e.preventDefault()
-  
-    try {
-        setError("")
-        setLoading(true)
-        login(emailRef.current.value, passwordRef.current.value)
-    } catch {
-        setError("No tiene una cuenta registrada")
+    //Esta función es para procesar el Login
+    async function handleSubmit(e) {
+        e.preventDefault()
+
+        try {
+            setError("")
+            setLoading(true)
+            login(emailRef.current.value, passwordRef.current.value)
+        } catch {
+            setError("Procesando...")
+        }
+        setLoading(false)
     }
-  
-    setLoading(false)
-    }
+
+    //Estructura de Login
     return (
         <div className="log-box-conntainer">
             <form className="log-box" onSubmit={handleSubmit}>

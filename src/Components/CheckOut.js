@@ -65,9 +65,7 @@ const CheckoutForm = ({limpiarCarrito}) => {
     
           <button disabled={!stripe} onClick={() => limpiarCarrito()} className="btn btn-success">
             {loading ? (
-              <div className="spinner-border text-light" role="status">
-                <span className="sr-only">Loading...</span>
-              </div>
+              <div className="carga" role="status"></div>
             ) : (
               "Realizar compra"
             )}

@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "./Context/AuthContext"
 
 function SignUp() {
+    //Función de para crear la cuenta de usuario
+    //Uso del useRef para referenciar en la función y useState para setear los valores de la función y la carga
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
@@ -11,6 +13,8 @@ function SignUp() {
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
 
+
+    //Esta función es para prevenir que cuando se confirme la contraseña, sea igual a la contraseña y no diferente
     async function handleSubmit(e) {
         e.preventDefault()
 
@@ -28,6 +32,8 @@ function SignUp() {
         setLoading(false)
     }
 
+
+    //Estructura de SignUp
     return(
         <div className="sign-box-conntainer">
             <form className="sign-box" onSubmit={handleSubmit}>

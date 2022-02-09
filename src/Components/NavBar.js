@@ -7,8 +7,9 @@ import "./CSS/App.css"
 
 function Menu() {
 
+    //Uso del useContext para traer el productCounter, que muestre cuantos productos hay en el carrito (si no hay ningún producto no mmuestra ningun valor).
     const { productCounter } = useContext(CartContext)
-    //Menu con los Links con sus respectivas rutas o Routes que hay en App.js y los iconos de CartWidget.js
+    //Menu con los Links con sus respectivas rutas o Routes que hay en App.js y los iconos que nos envian al Cart y al Login.
     return (
         <header>
 

@@ -6,9 +6,6 @@ import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import "./CSS/App.css"
 
-
-//Array de items sobre los generos de libros
-
 function Generos() {
     const [genero, setGenero] = useState([])
     const [loading, setLoading] = useState(true)

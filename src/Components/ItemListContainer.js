@@ -6,12 +6,11 @@ import { useParams } from "react-router-dom";
 
 
 const ItemListContainer = () => {
-
+    //Uso del useState para setear los valores de la función y carga y useEffect para utilizar la coleccion de Items del firebase para poder renderizarla después en Item 
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
     const {id} = useParams()
 
-    
     useEffect(() => {
         if(id){
             const coleccionItems = collection(db,"Items")
