@@ -33,7 +33,7 @@ Gif/Imagenes:
      <br />
      <img src="./Generos.gif" alt="Gif del proyecto" />
      <br />
-     <img src="./Detalle final.gif" alt="Gif del proyecto" />
+     <img src="./Detallefinal.gif" alt="Gif del proyecto" />
 </p>
 
 Deploy: 
