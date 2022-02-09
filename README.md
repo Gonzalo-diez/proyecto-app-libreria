@@ -27,11 +27,17 @@ Gif/Imagenes:
 
 <p align="center">
      <h2>Pruebas del proyecto: </h2>
-     <img src="./Proyecto.gif" alt="Gif del proyecto" />
+     <img src="./Inicio.gif" alt="Gif del proyecto" />
+     <br />
+     <img src="./Carrito.gif" alt="Gif del proyecto" />
+     <br />
+     <img src="./Generos.gif" alt="Gif del proyecto" />
+     <br />
+     <img src="./Detalle final.gif" alt="Gif del proyecto" />
 </p>
 
 Deploy: 
-
+https://la-libreria.netlify.app/
 
 Redes: 
 Git Hub: https://github.com/Gonzalo-diez
