@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Auth } from "../Firebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, signOut } from "firebase/auth"
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 //Contexto que devuelve las funciones como promesas
 const AuthContext = React.createContext({
@@ -22,6 +24,7 @@ export function useAuth() {
 export default function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState()
   const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
 
   //SigUp para cuando el usuario quiera registrarse, se guarde su email y ID en el firebase
   const signup = async (email, password) => {
@@ -30,7 +33,13 @@ export default function AuthProvider({ children }) {
 
   //Login para cuando el usuario quiera logearse en la App
   const login = async (email, password) => {
-      return signInWithEmailAndPassword(Auth, email, password)
+    try {
+      await signInWithEmailAndPassword(Auth, email, password)
+    } catch (error) {
+      if("auth/user-not-found") {
+        return (navigate(error ? "/Login" : "/User"), toast("No se ha registrado aún"))
+      }
+    }
   }
 
   //LogOut para cuando el usuario quiera cerrar su sesión
