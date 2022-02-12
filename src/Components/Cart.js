@@ -3,6 +3,7 @@ import { CartContext } from "./Context/CartContext"
 import { Link, useNavigate } from "react-router-dom"
 import { db } from "./Firebase"
 import { addDoc, collection, Timestamp } from "firebase/firestore";
+import toast from "react-hot-toast"
 import CartItem from "./CartItem"
 
 const Cart = () => {
@@ -25,7 +26,7 @@ const Cart = () => {
         pedido
         .then((res) => {
             setOrden(res.id)
-            alert("Orden creada: " + res.id)
+            toast.success("Orden creada: " + res.id)
         })
         .catch((error) => {
             console.error(error)

@@ -1,4 +1,5 @@
 import React from "react"
+import toast, { Toaster } from "react-hot-toast"
 import { createContext, useState } from "react"
 
 //Contexto usado para productCounter
@@ -18,12 +19,12 @@ const CartProvider = ({ children }) => {
     //Función para cuando el usuario el ingresa el mismo producto más de 2 veces
     const agregarProducto = (producto, cantidad) => { 
         if (isInCart(producto.id)) {
-            console.log(`Agregaste el mismo producto al carrito, cantidad: ${cantidad}.`);
+            toast.success(`Agregaste el mismo producto al carrito, cantidad: ${cantidad}.`);
             const actualizar = carrito.findIndex(elemento => elemento.item.id === producto.id)
             carrito[actualizar].cantidad = carrito[actualizar].cantidad + cantidad
             setCarrito([...carrito])
         } else {
-            console.log(`Agregaste ${producto.title}, cantidad: ${cantidad}.`);
+            toast.success(`Agregaste ${producto.title}, cantidad: ${cantidad}.`);
             const newObj = {
               item: producto,
               cantidad
@@ -72,6 +73,7 @@ const CartProvider = ({ children }) => {
     return (
         <Provider value={value}>
             {children}
+            <Toaster />
         </Provider>
     )
 }
