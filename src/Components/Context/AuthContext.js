@@ -36,8 +36,11 @@ export default function AuthProvider({ children }) {
     try {
       await signInWithEmailAndPassword(Auth, email, password)
     } catch (error) {
-      if("auth/user-not-found") {
-        return (navigate(error ? "/Login" : "/User"), toast("No se ha registrado aún"))
+      if(error == "auth/user-not-found") {
+        return (navigate(error ? "/Login" : "/NoUser"), toast("No se ha registrado aún"))
+      }
+      else if (error){
+        return (navigate(!error ? "/Login" : "/User"), toast("Bienvenido"))
       }
     }
   }

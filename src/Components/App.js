@@ -6,6 +6,7 @@ import Generos from "./Generos"
 import GenerosList from "./GenerosList"
 import ItemDetailContainer from './ItemDetailContainer';
 import Error from "./Error";
+import NoUser from "./NoUser";
 import Cart from "./Cart"
 import CheckOut from "./CheckOut"
 import SignUp from "./SignUp"
@@ -36,6 +37,7 @@ function App() {
               <Route path="/Login" element={<Login />} />
               <Route path="/User" element={<User />} />
               <Route path="/ForgotPassword" element={<ForgotPassword />} />
+              <Route path="/NoUser" element={<NoUser />} />
               <Route path="*" element={<Error />} />
             </Routes>
           <Footer />

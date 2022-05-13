@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useAuth } from "./Context/AuthContext";
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export default function Login() {
     //Función de para logear el usuario
@@ -10,7 +10,6 @@ export default function Login() {
     const { login } = useAuth()
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
-    const navigate = useNavigate()
   
     //Esta función es para procesar el Login
     async function handleSubmit(e) {
@@ -37,7 +36,7 @@ export default function Login() {
                 <label>Contraseña</label>
                 <input type="password" ref={passwordRef} placeholder="Ingrese su contraseña" required />
                 <div className="btn-crear">
-                    <button disabled={loading} onClick={navigate(!loading ? "/User" : "/Login")}>Iniciar sesión</button>
+                    <button disabled={loading} onClick={login}>Iniciar sesión</button>
                 </div>
             </form>
             <div className="btn-inicio">
