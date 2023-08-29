@@ -545,6 +545,20 @@ footer {
 
 
 /*Diseño para notebooks*/
+@media (max-width: 1920px) {
+    .carga {
+        margin-left: 50px;
+    }
+
+    .log-box-conntainer {
+        margin-left: 50px;
+    }
+
+    .log-box-conntainer .btn-inicio {
+        margin-right: 100px;
+    }
+}
+
 @media (max-width: 1024px) {
     .checkout-box .form-group {
         border: .1rem solid var(--negro);
